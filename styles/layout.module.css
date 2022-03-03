@@ -1,0 +1,5 @@
+.page-container {
+    width: calc(100% - 20vh);
+    height: 100vh;
+    transition: 0.5s margin-left ease-in-out;
+}
