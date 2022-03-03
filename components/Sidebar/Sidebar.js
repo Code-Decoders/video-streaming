@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styles from './Sidebar.module.css';
-import { FiChevronLeft, FiFile, FiFeather, FiUsers } from 'react-icons/fi'
+import { FiChevronRight, FiChevronLeft, FiFile, FiFeather, FiUsers } from 'react-icons/fi'
 import { AppState } from '../../pages/_app';
 import SidebarButton from './Sidebar.Button';
 import { useRouter } from 'next/router';
@@ -21,8 +21,8 @@ const Sidebar = () => {
                         isSidebarOpen: !prevState.isSidebarOpen
                     }))
                 }}>
-                    <FiChevronLeft color='white' height={13} width={6} />
-                </div>
+                  {state.isSidebarOpen ?   <FiChevronLeft color='white' height={13} width={6} /> : <FiChevronRight color='white' height={13} width={6} />}
+                  </div>
             </div>
             {state.isSidebarOpen ? <div className={styles['sidebar-header']} style={{ marginBottom: '10px' }}>Home</div> : <></>}
             <SidebarButton title={'Dashboard'} icon={<FiFile />} actived={router.pathname == '/'} link={'/'} />

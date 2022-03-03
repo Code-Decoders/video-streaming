@@ -14,3 +14,7 @@
   align-items: center;
 }
 
+.livenow{
+  display: flex;
+  gap: 30px;
+}

@@ -17,6 +17,7 @@
 
 .sidebar-circle-button {
   height: 41px;
+  cursor: pointer;
   width: 41px;
   margin-bottom: 39px;
   display: flex;

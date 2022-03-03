@@ -1,9 +1,5 @@
 .base{
-<<<<<<< HEAD
-  height: 100px;
-=======
   display: flex;
->>>>>>> f6f1a782ddb0032ed344090fb6c23537f0839a1e
   font-size: 100px;
   position: sticky;
   padding: 40px;
@@ -14,48 +10,17 @@
 }
 
 .search{
-<<<<<<< HEAD
-  margin-left: 330px;
-}
-
-.groupIcons{
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 50px;
-  margin-left: 600px;
-}
-
-.pluscircle{
-  position: absolute;
-  height: 30px;
-  top: 53px;
-  right: 150px;
-  cursor: pointer;
-=======
-  flex: 1
+  flex: 1;
 }
 
 
 .pluscircle{
   width: 30px;
   height: 30px;
->>>>>>> f6f1a782ddb0032ed344090fb6c23537f0839a1e
 }
 
 
 .bell{
-<<<<<<< HEAD
-  position: absolute;
-  height: 30px;
-  top: 56px;
-  right: 250px;
-  cursor: pointer;
-}
-
-.user{
-  height: 30px;
-  cursor: pointer;
-=======
   width: 30px;
   height: 30px;
 }
@@ -63,36 +28,20 @@
 .user{
   width: 30px;
   height: 30px;
->>>>>>> f6f1a782ddb0032ed344090fb6c23537f0839a1e
 }
 
 .userclass{
-  position: absolute;
-  right: 80px;
   top: 43px;
-  height: 50px;
-  width: 50px;
+  height: 90px;
+  width: 90px;
   display: flex;
-<<<<<<< HEAD
-  border-radius: 100px;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--secondary);
-}
-
-.userclass:hover{
-  background-color: var(--primary);
-=======
   height: 46px;
   align-items: center;
   justify-content: center;
-  background: var(--secondary-tool);
-  border-radius: 50%;
   width: 46px;
->>>>>>> f6f1a782ddb0032ed344090fb6c23537f0839a1e
 }
 
 .user:hover{
-  border-radius: 1000px;
+  border-radius: 50%; 
   background-color: var(--primary);
 }

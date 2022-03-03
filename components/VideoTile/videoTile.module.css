@@ -1,0 +1,48 @@
+.videoimage{
+  width: 395px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.videoimage:hover{
+  animation: play 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes play{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.12);
+  }
+}
+
+.videobase{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.videobase:hover{
+  cursor: pointer;
+  animation: elevate 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.videobase:after{
+  animation: final 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes final {
+  to{
+    box-shadow: 0px 0px 0px;
+  }
+}
+
+@keyframes elevate{
+  to{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  }
+}
