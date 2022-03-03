@@ -10,7 +10,7 @@
 }
 
 .search{
-  flex: 1;
+  flex: 1
 }
 
 
@@ -18,7 +18,6 @@
   width: 30px;
   height: 30px;
 }
-
 
 .bell{
   width: 30px;
@@ -31,9 +30,6 @@
 }
 
 .userclass{
-  top: 43px;
-  height: 90px;
-  width: 90px;
   display: flex;
   height: 46px;
   align-items: center;
