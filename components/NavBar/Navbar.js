@@ -4,7 +4,11 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
 import { FiPlusCircle, FiBell, FiUser } from 'react-icons/fi';
 
+<<<<<<< HEAD
+const NavBar = ({route, plusClick, bellClick, userClick}) => {
+=======
 const NavBar = () => {
+>>>>>>> f6f1a782ddb0032ed344090fb6c23537f0839a1e
 
   const [search, setSearch] = useState("")
 
@@ -14,6 +18,18 @@ const NavBar = () => {
     setSearch("");
   }
 
+<<<<<<< HEAD
+  return(
+    <div className = {navbarstyle.base}>
+    <div className = {navbarstyle.search}>    
+        <SearchBar r = "40px" onClick = {() => Search()} value = {search} setSearch = {setSearch}/></div>
+    <div className = {navbarstyle.groupIcons}>
+        <FiPlusCircle className = {navbarstyle.pluscircle} onClick = {plusClick}/>
+        <FiBell className = {navbarstyle.bell} onClick = {bellClick}/>
+        <div className = {navbarstyle.userclass}>
+        <FiUser className = {navbarstyle.user} onClick = {userClick}/></div>
+    </div>
+=======
   return (
     <div className={navbarstyle.base}>
       <div className={navbarstyle.search}>
@@ -23,6 +39,7 @@ const NavBar = () => {
       <div className={navbarstyle.userclass}>
         <FiUser className={navbarstyle.user} />
       </div>
+>>>>>>> f6f1a782ddb0032ed344090fb6c23537f0839a1e
     </div>
   )
 }
