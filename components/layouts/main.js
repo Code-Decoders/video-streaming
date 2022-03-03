@@ -13,7 +13,7 @@ const Main = ({ children }) => {
     <div style={{ display: 'flex', }}>
       <Sidebar />
       <div className={styles['page-container']} style={state.isSidebarOpen ? { marginLeft: '20%' } : { marginLeft: '7%' }}>
-        <Navbar route={router.asPath} />
+        <Navbar />
         <main style={{ backgroundColor: "var(--secondary)", height: "Calc(100vh - 100px)", }}>
           {children}
         </main>
