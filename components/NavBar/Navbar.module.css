@@ -1,6 +1,7 @@
 .base{
   display: flex;
   font-size: 100px;
+  position: sticky;
   padding: 40px;
   align-items: center;
   color: white;
