@@ -4,6 +4,7 @@ import { FiChevronLeft, FiFile, FiFeather, FiUsers } from 'react-icons/fi'
 import { AppState } from '../../pages/_app';
 import SidebarButton from './Sidebar.Button';
 import { useRouter } from 'next/router';
+import SidebarTile from './Sidebar.Tile';
 
 const Sidebar = () => {
 
@@ -29,7 +30,13 @@ const Sidebar = () => {
             <SidebarButton title={'Browse'} icon={<FiFeather />} actived={router.pathname == '/browse'} link={'/browse'} />
             <SidebarButton title={'Community'} icon={<FiUsers />} actived={router.pathname == '/community'} link={'/api'} />
             <SidebarButton title={'Your Videos'} icon={<FiFile />} actived={router.pathname == '/yourvideos'} link={'/api'} />
-            {state.isSidebarOpen ? <div className={styles['sidebar-header']} style={{ marginBottom: '10px', marginTop: '41px' }}>Following</div> : <></>}
+            {state.isSidebarOpen ? <div className={styles['sidebar-header']} style={{ marginBottom: '16px', marginTop: '41px' }}>Following</div> : <></>}
+            <SidebarTile title={'Ann Bell'} subtitle={'Valorant'} live={false}/>
+            <SidebarTile title={'Ann Bell'} subtitle={'Valorant'} live={false}/>
+            <SidebarTile title={'Ann Bell'} subtitle={'Valorant'} live={true}/>
+            <SidebarTile title={'Ann Bell'} subtitle={'Valorant'} live={true}/>
+            <SidebarTile title={'Ann Bell'} subtitle={'Valorant'} live={false}/>
+            <SidebarTile title={'Ann Bell'} subtitle={'Valorant'} live={false}/>
         </div>
     )
 }
