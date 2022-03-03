@@ -3,6 +3,7 @@
   width: 20%;
   height: 100vh;
   position: fixed;
+  z-index: 5;
   top: 0;
   background: var(--primary);
   transition: 0.5s width ease-in-out;
