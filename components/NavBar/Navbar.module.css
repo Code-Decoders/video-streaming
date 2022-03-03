@@ -19,7 +19,6 @@
   height: 30px;
 }
 
-
 .bell{
   width: 30px;
   height: 30px;
@@ -31,11 +30,6 @@
 }
 
 .userclass{
-  position: absolute;
-  right: 80px;
-  top: 43px;
-  height: 50px;
-  width: 50px;
   display: flex;
   height: 46px;
   align-items: center;
