@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Layout from '../components/layout'
+import Layout from '../components/layouts/main'
 import React from 'react'
 
 export const AppState = React.createContext();
@@ -10,10 +10,10 @@ function MyApp({ Component, pageProps }) {
     'sidebar-menu-item': 'Dashboard',
   });
   return (
-    <AppState.Provider value={[state,setState]}>
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <AppState.Provider value={[state, setState]}>
+      <Layout >
+        <Component {...pageProps}  />
+      </Layout>
     </AppState.Provider>
   )
 }

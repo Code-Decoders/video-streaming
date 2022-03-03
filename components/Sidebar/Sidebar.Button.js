@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import styles from '../styles/Sidebar.module.css'
-import { AppState } from '../pages/_app'
+import styles from './Sidebar.module.css'
+import { AppState } from '../../pages/_app'
 import Link from 'next/link'
 
 const SidebarButton = ({ title, icon, actived, link }) => {

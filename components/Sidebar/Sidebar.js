@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
-import styles from '../styles/Sidebar.module.css';
+import styles from './Sidebar.module.css';
 import { FiChevronLeft, FiFile, FiFeather, FiUsers } from 'react-icons/fi'
-import { AppState } from '../pages/_app';
+import { AppState } from '../../pages/_app';
 import SidebarButton from './Sidebar.Button';
 import { useRouter } from 'next/router';
 
 const Sidebar = () => {
 
     const [state, setState] = useContext(AppState);
+    console.log(state)
     const path = '';
     const router = useRouter()
 
