@@ -5,13 +5,13 @@ const Main = ({children, router}) => {
   return(
     <div>
       <Head>
-          <meta name = "viewport" content = "width=device-width, initial-scale=1, height=device-height"/>
+          <meta name = "viewport" content = "initial-scale=1"/>
           <meta name = "author" content = "CodeDecoders"/>
           <title>Video Streaming </title>
       </Head>
       <div>
       <Navbar route = {router.asPath}/>
-      <div style = {{ backgroundColor: "var(--secondary)", height: "Calc(100vh - 100px)", width: "100%"}}>
+      <div style = {{ backgroundColor: "var(--secondary)", height: "Calc(100vh - 100px)"}}>
         {children}
       </div>
     </div>
