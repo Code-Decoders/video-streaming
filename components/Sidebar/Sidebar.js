@@ -26,7 +26,7 @@ const Sidebar = () => {
                   </div>
             </div>
             {state.isSidebarOpen ? <div className={styles['sidebar-header']} style={{ marginBottom: '10px' }}>Home</div> : <></>}
-            <SidebarButton title={'Dashboard'} icon={<FiFile />} actived={router.pathname == '/'} link={'/'} />
+            <SidebarButton title={'Dashboard'} icon={<FiFile i/>} actived={router.pathname == '/'} link={'/'} />
             <SidebarButton title={'Browse'} icon={<FiFeather />} actived={router.pathname == '/browse'} link={'/browse'} />
             <SidebarButton title={'Community'} icon={<FiUsers />} actived={router.pathname == '/community'} link={'/api'} />
             <SidebarButton title={'Your Videos'} icon={<FiFile />} actived={router.pathname == '/yourvideos'} link={'/api'} />
