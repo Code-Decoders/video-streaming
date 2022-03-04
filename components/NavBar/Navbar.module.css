@@ -2,8 +2,9 @@
   display: flex;
   font-size: 100px;
   position: sticky;
-  padding: 40px;
+  padding: 40px 0px 40px 40px;
   align-items: center;
+  width: 100vw;
   color: white;
   gap: 0 33px;
   background-color: var(--secondary);

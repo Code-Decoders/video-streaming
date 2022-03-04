@@ -1,5 +1,6 @@
 .videoimage{
   width: 395px;
+  height: 350px;
   border-radius: 10px;
   overflow: hidden;
 }

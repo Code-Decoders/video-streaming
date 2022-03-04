@@ -9,7 +9,7 @@ import { useContext } from "react";
 const NavBar = () => {
 
   const [search, setSearch] = useState("")
-  const [state, setState] = useContext(AppState)
+  const [state] = useContext(AppState)
 
   const Search = () => {
     console.log(search);
@@ -17,7 +17,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className={navbarstyle.base}>
+    <div style = {!state.isSidebarOpen ? { width: "100%"} : { width: "93%"}} className={navbarstyle.base}>
       <div className={navbarstyle.search}>
         <SearchBar onClick={() => Search()} value={search} setSearch={setSearch} /></div>
       <FiPlusCircle className={navbarstyle.pluscircle} />
