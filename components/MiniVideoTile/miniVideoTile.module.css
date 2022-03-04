@@ -1,14 +1,13 @@
 .miniVideoTilebase{
-  width: 250px;
+  min-width: 250px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: 300px;
 }
 
 .follow{
- fontSize: 20px;
+ font-size: 12px;
  background-color: #E5E5E5;
  display: flex;
  align-items: center;

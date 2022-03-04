@@ -17,7 +17,7 @@ const NavBar = () => {
   }
 
   return (
-    <div style = {!state.isSidebarOpen ? { width: "100%"} : { width: "93%"}} className={navbarstyle.base}>
+    <div style = {{ width: "100%"}} className={navbarstyle.base}>
       <div className={navbarstyle.search}>
         <SearchBar onClick={() => Search()} value={search} setSearch={setSearch} /></div>
       <FiPlusCircle className={navbarstyle.pluscircle} />
