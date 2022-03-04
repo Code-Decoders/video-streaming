@@ -8,13 +8,13 @@ const VideoTile = ({image, title, player, game}) => {
         <div className = {styles.videoimage}>
         <Image borderRadius = "20px" objectFit = "contain" src = {image} alt = "image tile"/>       
         </div>
-        <div style = {{ fontSize: "25px",paddingTop: "5px" }}>
+        <div style = {{ fontSize: "14px",paddingTop: "5px" }}>
         {title}
         </div>
-      <div style = {{ fontSize: "15px", paddingTop: "5px" }}>
+      <div style = {{ fontSize: "12px", paddingTop: "5px" }}>
         {player}
       </div>
-      <div style = {{ fontSize: "15px", color: "var(--secondary-tool)" }}>
+      <div style = {{ fontSize: "12px", color: "var(--secondary-tool)" }}>
         {game}
       </div>
     </div>

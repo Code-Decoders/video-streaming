@@ -1,6 +1,5 @@
 .videoimage{
   width: 395px;
-  height: 350px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -15,7 +14,7 @@
     transform: scale(1);
   }
   to{
-    transform: scale(1.12);
+    transform: scale(1.05);
   }
 }
 

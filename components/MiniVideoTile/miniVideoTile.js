@@ -2,23 +2,23 @@ import styles from './miniVideoTile.module.css';
 import Image from 'next/image';
 import { FiPlus } from 'react-icons/fi';
 
-const MiniVideoTile = ({image, game, type = "fps"}) => {
-  return(
-    <div  className = {styles.miniVideoTilebase}> 
-        <div style  = {{ cursor: "pointer" }}>
-        <Image borderRadius = "20px" layout='responsive' objectFit = "fill" src = {image} alt = "image tile"/>       
-        </div>
-      <div style = {{ fontSize: "20px", fontWeight: "bold", color: "white" , cursor: 'pointer'}}>
+const MiniVideoTile = ({ image, game, type = "fps" }) => {
+  return (
+    <div className={styles.miniVideoTilebase}>
+      <div style={{ cursor: "pointer" }}>
+        <Image borderRadius="20px" layout='responsive' objectFit="fill" src={image} alt="image tile" />
+      </div>
+      <div style={{ fontSize: "14px", fontWeight: "bold", color: "white", cursor: 'pointer' }}>
         {game}
       </div>
-      <div style = {{ color: "var(--secondary-tool)", fontWeight: "bold" }}>
-    {type.toUpperCase()}
+      <div style={{ fontSize: '12px', color: "var(--secondary-tool)", fontWeight: "bold" }}>
+        {type.toUpperCase()}
+      </div>
+      <div className={styles.follow}>
+        Follow<FiPlus style={{ height: "20px", width: "20px" }} />
+      </div>
     </div>
-    <div className = {styles.follow}>
-      Follow<FiPlus style = {{height: "20px", width: "20px" }}/>
-    </div>
-    </div>
-  )    
+  )
 }
 
 export default MiniVideoTile
