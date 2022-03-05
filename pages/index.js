@@ -15,7 +15,7 @@ export default function Home() {
   const liveNowBarStyle = { color: "white", justifyContent: "space-between", fontWeight: "bold", padding: "0px 30px 20px 30px", fontSize: "20px", display: "flex", alignItems: "center" };
 
   return (
-    <div style={{ height: "100%", color: "black", marginTop: "50px" }}>
+    <div style={{ height: "100%", color: "black", marginTop: "50px", width: "100vw"}}>
       <div style={{ ...liveNowBarStyle }}>
         <div style={{ flex: "1", fontSize: "30px", wordSpacing: '2px' }}> Live now</div>
         <div style={{ color: "var(--secondary-tool)", padding: '0 30px', fontWeight: "none", alignContent: "center", cursor: "pointer", justifyContent: "space-between", display: "flex" }}>
@@ -32,7 +32,7 @@ export default function Home() {
                 key={index}
                 image={video.image}
                 title={video.title}
-                player={video.player}
+                user={video.player}
                 game={video.game}
               />
             );
@@ -71,7 +71,7 @@ export default function Home() {
                 key={index}
                 image={video.image}
                 title={video.title}
-                player={video.player}
+                user={video.player}
                 game={video.game}
               />
             );

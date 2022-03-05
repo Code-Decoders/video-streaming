@@ -1,18 +1,19 @@
 import styles from './videoTile.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
-
-const VideoTile = ({image, title, player, game}) => {
+const VideoTile = ({image, title, user, game}) => {
   return(
     <div style = {{color: 'white'}} className = {styles.videobase}>
         <div className = {styles.videoimage}>
-        <Image borderRadius = "20px" objectFit = "contain" src = {image} alt = "image tile"/>       
+        <Link href = {`/live/${user}?title=${title}&game=${game}`} passHref scroll = {false}>
+        <Image objectFit = "contain" src = {image} alt = "image tile"/></Link>
         </div>
         <div style = {{ fontSize: "14px",paddingTop: "5px" }}>
         {title}
         </div>
       <div style = {{ fontSize: "12px", paddingTop: "5px" }}>
-        {player}
+        {user}
       </div>
       <div style = {{ fontSize: "12px", color: "var(--secondary-tool)" }}>
         {game}

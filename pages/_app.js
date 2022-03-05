@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   });
   return (
     <AppState.Provider value={[state, setState]}>
-      <Layout >
+      <Layout>
         <Component {...pageProps}  />
       </Layout>
     </AppState.Provider>
