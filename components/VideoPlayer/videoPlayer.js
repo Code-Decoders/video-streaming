@@ -7,6 +7,7 @@ import { data } from '../../public/dummy_data/data';
 import MiniVideoTile from '../MiniVideoTile/miniVideoTile';
 import VideoTile from '../VideoTile/videoTile';
 
+
 const VideoPlayer = ({image, name, title, game}) => {
   return(
     <div style = {{marginRight: "2%"}}>
