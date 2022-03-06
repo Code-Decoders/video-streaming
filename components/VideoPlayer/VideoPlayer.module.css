@@ -24,7 +24,7 @@
 .livenow{
   margin-top: 20px;
   display: flex;
-  width: 1620px;
+  width: 100%;
   padding: 0 30px;
   overflow-x: scroll;
   gap: 30px;
