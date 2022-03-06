@@ -1,14 +1,14 @@
-.video-player{
+.video-player {
   width: 100%;
   aspect-ratio: 16/9;
 }
-.desc{    
+.desc {
   margin-top: 30px;
   height: 140px;
   width: 100%;
 }
 
-.name{
+.name {
   width: 100%;
   align-items: flex-start;
   flex-direction: row;
@@ -17,21 +17,28 @@
   font-size: 20px;
 }
 
-.user-profile{
+.user-profile {
   display: flex;
 }
 
-.livenow{
+.icon-style {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.livenow {
   margin-top: 20px;
   display: flex;
-  width: 1620px;
+  width: 100%;
   padding: 0 30px;
   overflow-x: scroll;
   gap: 30px;
 }
 
-.subscribe{
-  background-color: var(--secondary-tool); 
+.subscribe {
+  background-color: var(--secondary-tool);
   width: 210px;
   text-align: center;
   display: flex;
@@ -43,7 +50,7 @@
   height: 50px;
 }
 
-.tags{
+.tags {
   flex: 1;
   display: flex;
   gap: 2%;

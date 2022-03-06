@@ -14,10 +14,34 @@
   align-items: center;
 }
 
-.livenow{
+.livenow {
   display: flex;
   width: 100%;
   padding: 0 30px;
   overflow-x: scroll;
   gap: 30px;
+}
+
+.see-all {
+  color: var(--secondary-tool);
+  padding: 0 30px;
+  font-weight: none;
+  align-content: center;
+  cursor: pointer;
+  justify-content: space-between;
+  display: flex;
+}
+
+.live-now-bar-style {
+  color: white;
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 0px 30px 20px 30px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.body:-webkit-scrollbar {
+  width: 10px;
 }
