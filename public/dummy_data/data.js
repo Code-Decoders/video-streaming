@@ -18,23 +18,5 @@ export const data = [
         title: "Hello",
         player: "Nomad",
         game: "Valorant",
-    },
-    {
-        image: demoImage,
-        title: "Hello",
-        player: "Nomad",
-        game: "Valorant",
-    },
-    {
-        image: demoImage,
-        title: "Hello",
-        player: "Nomad",
-        game: "Valorant",
-    },
-    {
-        image: demoImage,
-        title: "Hello",
-        player: "Nomad",
-        game: "Valorant",
     }
 ]

@@ -43,7 +43,8 @@ export default function Home() {
       </div>
       <div style={{ display: "flex", gap: "30px", marginTop: "10px", padding: '0 30px', width: '100%', overflowX: 'scroll' }}>
         {
-          data.map((video, index) => {
+          Array(6).fill('0').map((v, index) => {
+            var video = data[0];
             return (
               <MiniVideoTile
                 key={index}

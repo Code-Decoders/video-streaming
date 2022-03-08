@@ -1,5 +1,5 @@
 .videoimage{
-  width: 395px;
+  flex: 1;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -19,7 +19,6 @@
 }
 
 .videobase{
-  width: 395px;
   display: flex;
   flex-direction: column;
 }
