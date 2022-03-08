@@ -12,13 +12,12 @@ export default function Home() {
   const [state] = useContext(AppState);
 
 
-  const liveNowBarStyle = { color: "white",justifyContent: "space-between", fontWeight: "bold", padding: "0px 30px 20px 30px", fontSize: "20px", display: "flex", alignItems: "center" };
 
   return (
     <div style={{ height: "100%", color: "black", marginTop: "50px"}}>
-      <div style={{ ...liveNowBarStyle }}>
+      <div className={styles['live-now-bar-style']}>
         <div style={{ flex: "1", fontSize: "30px", wordSpacing: '2px' }}> Live now</div>
-        <div style={{ color: "var(--secondary-tool)", padding: '0 30px', fontWeight: "none", alignContent: "center", cursor: "pointer", justifyContent: "space-between", display: "flex" }}>
+        <div className={styles['see-all']}>
           See All <FiChevronRight style={{ width: "24px", height: "24px", }} />
         </div>
       </div>
@@ -59,7 +58,7 @@ export default function Home() {
           )
         }
       </div>
-      <div style={{ ...liveNowBarStyle, marginTop: '31px' }}>
+      <div style={{marginTop: '31px' }} className = {styles['live-now-bar-style']}>
         <div style={{ flex: "1", fontSize: "30px", wordSpacing: '2px' }}>Recommended Streams</div>
       </div>
 
