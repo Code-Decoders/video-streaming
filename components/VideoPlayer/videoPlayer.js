@@ -9,7 +9,7 @@ import VideoTile from "../VideoTile/videoTile";
 
 const VideoPlayer = ({ image, name, title, game }) => {
   return (
-    <div style={{ marginRight: "2%" }}>
+    <div style={{ marginRight: "2%",}}>
       <div className={styles["video-player"]}>
         <Image src={image} alt="no Image" />
       </div>

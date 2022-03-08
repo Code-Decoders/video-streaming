@@ -4,12 +4,17 @@ import { AppState } from '../../pages/_app';
 import Navbar from '../NavBar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import styles from './layout.module.css';
+import Head from 'next/head';
 
 const Main = ({ children }) => {
 
   const [state] = useContext(AppState)
-  const router = useRouter()
   return (
+    <div>
+    <Head>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1"/>
+    <title> Video Streaming </title>
+    </Head>
     <div style={{ display: 'flex', }}>
       <style jsx global>
         {
@@ -36,6 +41,7 @@ const Main = ({ children }) => {
           {children}
         </main>
       </div>
+    </div>
     </div>
   )
 }

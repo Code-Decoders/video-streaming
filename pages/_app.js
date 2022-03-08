@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Layout from '../components/layouts/main'
+import Main from '../components/layouts/main'
 import React from 'react'
 
 export const AppState = React.createContext();
@@ -9,12 +9,19 @@ function MyApp({ Component, pageProps }) {
     isSidebarOpen: true,
     'sidebar-menu-item': 'Dashboard',
   });
+
+  const getLayout = Component.getLayout 
   return (
-    <AppState.Provider value={[state, setState]}>
-      <Layout>
-        <Component {...pageProps}  />
-      </Layout>
-    </AppState.Provider>
+    getLayout ? getLayout(
+      <AppState.Provider value={[state, setState]}>
+      <Component {...pageProps}  />
+    </AppState.Provider>) : 
+      <AppState.Provider value={[state, setState]}>
+     <Main>
+      <Component {...pageProps}  />
+      </Main>
+    </AppState.Provider> 
+    
   )
 }
 

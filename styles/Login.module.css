@@ -1,0 +1,53 @@
+.base {
+  display: flex;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+
+.rightPane{
+  margin-top: 180px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 59px;
+}
+
+.rightPane .continue{
+  align-self: start;
+  font-size: 40px;
+  color: white;
+}
+
+/* .leftPage{
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 30%;
+  align-items: space-around;
+} */
+
+.login_illustration{
+  width: 280px;
+  height: 300px;
+}
+
+.bannerTextStyle{
+  width: 500px;
+  font-size: 70px;
+  color: white;
+}
+
+.metamask-button{
+  width: 300px;
+  height: 75px;
+  box-shadow: 0px 5px 5px 0px black;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  align-items: center;
+  justify-content: space-around;
+}
