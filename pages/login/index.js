@@ -10,31 +10,6 @@ const Login = () => {
 
   const [authInstance, setAuthInstance] = useState(null);
 
-<<<<<<< HEAD
-  const getAuth = async () => {
-    const AuthProvider = (await import("@arcana/auth")).AuthProvider;
-    const Auth = new AuthProvider({
-      appID: '568',
-      network: "testnet",
-      oauthCreds: [
-        {
-          type: "google",
-          clientId: "194404779871-s8hde43bkdc0du6afi37na3g6hn9h4kh.apps.googleusercontent.com",
-        },
-      ],
-      redirectUri: `${window.location.origin}/auth/redirect`,
-    })
-    setAuthInstance(Auth);
-  }
-
-  useEffect(() => {
-    getAuth()
-  }, [])
-
-  const login = async () => {
-    await authInstance.loginWithSocial("google");
-  }
-=======
     const getAuth = async () => {
       const AuthProvider = (await import("@arcana/auth")).AuthProvider;
       const Auth = new AuthProvider({
@@ -58,7 +33,6 @@ const Login = () => {
     const login = async () => {
       await authInstance.loginWithSocial("google");
     }
->>>>>>> ae6ad286739274dbfdd93cee508eae3d38a0036d
 
   console.log(authInstance)
 
