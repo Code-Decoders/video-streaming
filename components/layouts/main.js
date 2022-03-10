@@ -16,24 +16,6 @@ const Main = ({ children }) => {
     <title> Video Streaming </title>
     </Head>
     <div style={{ display: 'flex', }}>
-      <style jsx global>
-        {
-        `::-webkit-scrollbar {
-          height: 10px;
-            width: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-          /* -webkit-border-radius: 10px; */
-          border-radius: 5px;
-          background:var(--secondary-tool);
-      }
-        ::-webkit-scrollbar-track {
-          background-color: black;
-      }
-        `
-        }
-        
-        </style>
       <Sidebar />
       <div className={styles['page-container']} style={state.isSidebarOpen ? { marginLeft: '20%' } : { marginLeft: '7%', width: "93%"}}>
         <Navbar />
