@@ -13,20 +13,19 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  transition: 0.5s width ease-in-out;
 }
 
 .chat-bar-button {
   height: 41px;
   color: white;
-  margin-top: 20px;
-  margin-left: 15px;
   cursor: pointer;
   width: 41px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--tool);
+  background-color: var(--tool);
 }
 
 
