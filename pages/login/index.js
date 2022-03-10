@@ -12,7 +12,6 @@ const Login = () => {
 
   const getAuth = async () => {
     const AuthProvider = (await import("@arcana/auth")).AuthProvider;
-    AuthProvider.handleRedirectPage(window.location);
     const Auth = new AuthProvider({
       appID: '568',
       network: "testnet",
@@ -22,7 +21,7 @@ const Login = () => {
           clientId: "194404779871-s8hde43bkdc0du6afi37na3g6hn9h4kh.apps.googleusercontent.com",
         },
       ],
-      redirectUri: 'http://localhost:3000/',
+      redirectUri: `${window.location.origin}/auth/redirect`,
     })
     setAuthInstance(Auth);
   }
