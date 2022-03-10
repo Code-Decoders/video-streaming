@@ -6,7 +6,7 @@ const MiniVideoTile = ({ image, game, type = "fps" }) => {
   return (
     <div className={styles.miniVideoTilebase}>
       <div style={{ cursor: "pointer" }}>
-        <Image layout='responsive' objectFit="fill" src={image} alt="image tile" />
+        <Image layout='responsive' objectFit="fill" src={image} alt="image tile" className={styles.miniVideoImage} />
       </div>
       <div style={{ fontSize: "14px", fontWeight: "bold", color: "white", cursor: 'pointer' }}>
         {game}

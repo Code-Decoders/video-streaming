@@ -23,25 +23,6 @@
   flex-direction: column;
 }
 
-.videobase:hover{
-  cursor: pointer;
-  animation: elevate 0.3s;
-  animation-fill-mode: forwards;
-}
 
-.videobase:after{
-  animation: final 0.3s;
-  animation-fill-mode: forwards;
-}
 
-@keyframes final {
-  to{
-    box-shadow: 0px 0px 0px;
-  }
-}
 
-@keyframes elevate{
-  to{
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-  }
-}
