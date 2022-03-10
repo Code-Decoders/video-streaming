@@ -4,11 +4,13 @@ import Layout from '../../components/layouts/secondary'
 import Image from 'next/image'
 import Illustration from '../../public/images/login_illustration.png'
 import MetaMask from '../../public/images/metamask-logo-png-transparent 1.png'
+import { useRouter } from 'next/router'
 
 
 const Login = () => {
 
   const [authInstance, setAuthInstance] = useState(null);
+  const router = useRouter();
 
     const getAuth = async () => {
       const AuthProvider = (await import("@arcana/auth")).AuthProvider;
@@ -31,7 +33,11 @@ const Login = () => {
     }, [])
     
     const login = async () => {
-      await authInstance.loginWithSocial("google");
+      try{
+        await authInstance.loginWithSocial("google").then((res) => router.push('/'));
+      }catch(err) {
+          window.alert(err);
+      } 
     }
 
   console.log(authInstance)

@@ -2,16 +2,41 @@ import styles from '../styles/Home.module.css'
 import VideoTile from '../components/VideoTile/videoTile';
 import { FiChevronRight } from 'react-icons/fi';
 import { AppState } from './_app';
+import { useState,useEffect } from 'react'
 import { data } from '../public/dummy_data/data';
 import { useContext } from 'react/cjs/react.development';
 import MiniVideoTile from '../components/MiniVideoTile/miniVideoTile';
+import { useRouter } from 'next/router';
 import miniImage from '../public/images/mini_video_tile.png'
 
 export default function Home() {
 
+  const router = useRouter();
+
   const [state] = useContext(AppState);
 
+  const [authInstance, setAuthInstance] = useState(null);
 
+  useEffect( () => {
+    const getAuth = async () => {
+      const AuthProvider = (await import("@arcana/auth")).AuthProvider;
+      const Auth = new AuthProvider({
+        appID: '568',
+        network: "testnet",
+        oauthCreds: [
+          {
+            type: "google",
+            clientId: "194404779871-s8hde43bkdc0du6afi37na3g6hn9h4kh.apps.googleusercontent.com",
+          },
+        ],
+        redirectUri: `${window.location.origin}/auth/redirect`,
+      })
+       Auth.isLoggedIn ? console.log('logged in') : router.push('/login')
+      setAuthInstance(Auth);
+    }
+    
+    getAuth()
+  }, [router])
 
   return (
     <div style={{ height: "100%", color: "black", marginTop: "50px"}}>
