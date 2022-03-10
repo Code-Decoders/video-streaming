@@ -1,45 +1,50 @@
 .base {
   display: flex;
-  height: 100vh;
-  justify-content: space-evenly;
 }
 
-.rightPane{
-  margin-top: 180px;
-  width: 60%;
+
+.rightPane {
+  padding: 4vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 59px;
 }
 
-.rightPane .continue{
+.rightPane .continue {
   align-self: start;
   font-size: 40px;
   color: white;
 }
 
-/* .leftPage{
+.leftPane {
   display: flex;
-  gap: 100px;
+  flex: 0.3;
   flex-direction: column;
-  height: 100vh;
-  margin-top: 30%;
-  align-items: space-around;
-} */
+  align-items: center;
+  justify-content: center;
+  padding: 4vh;
+  gap: 40px;
+}
 
-.login_illustration{
+.login_illustration {
   width: 280px;
   height: 300px;
 }
 
-.bannerTextStyle{
-  width: 500px;
-  font-size: 70px;
+.bannerTextStyle {
+  font-size: 3.125em;
   color: white;
 }
 
-.metamask-button{
+.dividerBar {
+  height: 100vh;
+  width: 5px;
+  background: black;
+}
+
+.metamask-button {
   width: 300px;
   height: 75px;
   box-shadow: 0px 5px 5px 0px black;
@@ -50,4 +55,19 @@
   font-size: 25px;
   align-items: center;
   justify-content: space-around;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .leftPane {
+    display: none;
+  }
+
+  .rightPane {
+    max-width: 800px;
+  }
+  
+  .dividerBar {
+    display: none;
+  }
 }
