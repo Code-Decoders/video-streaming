@@ -8,6 +8,28 @@
   width: 100%;
 }
 
+.chat-bar-base{
+  background-color: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-bar-button {
+  height: 41px;
+  color: white;
+  margin-top: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  width: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--tool);
+}
+
+
 .name {
   width: 100%;
   align-items: flex-start;

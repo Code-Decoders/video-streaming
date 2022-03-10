@@ -6,10 +6,12 @@ import miniImage from "../../public/images/mini_video_tile.png";
 import { data } from "../../public/dummy_data/data";
 import MiniVideoTile from "../MiniVideoTile/miniVideoTile";
 import VideoTile from "../VideoTile/videoTile";
+import SideBar from './chatBar';
 
 const VideoPlayer = ({ image, name, title, game }) => {
   return (
-    <div style={{ marginRight: "2%",}}>
+    <div style = {{ display: "flex"}}>
+    <div style={{ marginRight: "2%"}}>
       <div className={styles["video-player"]}>
         <Image src={image} alt="no Image" />
       </div>
@@ -62,6 +64,8 @@ const VideoPlayer = ({ image, name, title, game }) => {
           );
         })}
       </div>
+    </div>
+    <SideBar/>
     </div>
   );
 };
