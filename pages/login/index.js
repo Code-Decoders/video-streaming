@@ -14,7 +14,7 @@ const Login = () => {
 
     const getAuth = async () => {
       const AuthProvider = (await import("@arcana/auth")).AuthProvider;
-      const Auth = new AuthProvider({
+      const authProvider = new AuthProvider({
         appID: '568',
         network: "testnet",
         oauthCreds: [
@@ -25,13 +25,15 @@ const Login = () => {
         ],
         redirectUri: `${window.location.origin}/auth/redirect`,
       })
-      setAuthInstance(Auth);
+      setAuthInstance(authProvider);
     }
     
     useEffect( () => {
       getAuth()
     }, [])
     
+    
+    console.log(authInstance)
     const login = async () => {
       try{
         await authInstance.loginWithSocial("google").then((res) => router.push('/'));
@@ -39,8 +41,6 @@ const Login = () => {
           window.alert(err);
       } 
     }
-
-  console.log(authInstance)
 
   return <div className={styles.base}>
     <div className={styles.leftPane}>

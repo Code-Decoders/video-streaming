@@ -2,11 +2,13 @@
   flex: 1;
   border-radius: 10px;
   overflow: hidden;
+
 }
 
 .videoimage:hover{
   animation: play 0.3s;
   animation-fill-mode: forwards;
+  cursor: pointer;
 }
 
 @keyframes play{
