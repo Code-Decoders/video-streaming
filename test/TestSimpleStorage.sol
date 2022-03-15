@@ -2,7 +2,7 @@ pragma solidity ^0.5.16;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
-import "../contracts/SimpleStorage.sol";
+import "../contracts/MyStream.sol";
 
 contract TestSimpleStorage {
 
