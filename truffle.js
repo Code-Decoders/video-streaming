@@ -1,6 +1,6 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
-const mnemonic = 'ENTER_VALUE';
+const mnemonic = 'space wall opera enemy broccoli know peanut vibrant alcohol wage lottery trip';
 module.exports = {
     networks: {
         development: {
