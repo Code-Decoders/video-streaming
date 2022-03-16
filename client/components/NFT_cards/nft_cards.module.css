@@ -1,0 +1,51 @@
+.base{
+    width: 243px;
+    border-radius: 10px;
+    margin-right: 45px;
+    height: 291px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.bio{
+    align-items: center;
+    justify-content: start;
+    margin-top: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 38px;
+}
+
+.center-align{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.image{
+    border-radius: 10px;
+}
+
+.image:hover{
+    margin: 0;
+    padding: 0;
+    animation: play 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+@keyframes play{
+    from{
+      transform: scale(1);
+    }
+    to{
+      transform: scale(1.05);
+    }
+  }
+  

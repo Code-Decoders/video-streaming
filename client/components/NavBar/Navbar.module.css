@@ -13,6 +13,8 @@
 
 .search{
   flex: 1;
+  gap: 20px;
+  display: flex ;
 }
 
 
@@ -42,6 +44,6 @@
 }
 
 .user:hover{
-  border-radius: 50%; 
+  border-radius: 50%;
   background-color: var(--primary);
 }
