@@ -5,7 +5,7 @@
 }
 
 .input{
-      display: flex;
+  display: flex;
   height: 52px;
   color: white;
   font-size: 20px;
@@ -19,8 +19,9 @@
 }
 
 .input::placeholder{
-    font-size: 40px;
+    font-size: 20px;
     color: var(--primary-tool);
+
 }
 
 .main {
