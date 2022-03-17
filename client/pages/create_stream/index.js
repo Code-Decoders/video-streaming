@@ -18,8 +18,8 @@ const CreateStream = () => {
                 ...prevData,
                 [e.target.name]: e.target.value,
             }
-        }) 
-    } 
+        })
+    }
 
     return(
         <div style = {{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingLeft: "40px",}}>
@@ -34,7 +34,7 @@ const CreateStream = () => {
                 </div>
             </div>
             <div className = {styles.inputbase} >
-                 <input value = {data.title} onChange = {change} name = {"title"} className = {styles.input} placeholder = "Title" />
+                 <input value = {data.title} onChange = {change} name = {"title"} className = {styles.input} placeholder = "Title"/>
                  <input value = {data.type} onChange = {change} name = {"type"} className = {styles.input} placeholder = "Type" />
                  <input value = {data.username} onChange = {change} name = {"username"} className = {styles.input} placeholder = "Username" />
             </div>
