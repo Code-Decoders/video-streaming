@@ -1,0 +1,39 @@
+.player{
+    height: 431px;
+    width: 90%;
+    background-color: var(--secondary-tool);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.video{
+    position: absolute;
+    width: 586px;
+    height: 331px;
+    border-radius: 20px;
+}
+
+.controllers{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    opacity: 0;
+    padding-left: 5%;
+    padding-bottom: 4%;
+}
+
+.player:hover > .controllers{
+    animation: controllers 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes controllers {
+  from{
+  }
+  to{
+      opacity: 100;
+  }
+}

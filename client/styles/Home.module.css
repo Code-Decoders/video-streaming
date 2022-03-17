@@ -4,6 +4,25 @@
   color: white;
 }
 
+.input{
+      display: flex;
+  height: 52px;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  width: 451px;
+  padding: 14px;
+  border: 1px solid var(--secondary-tool);
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input::placeholder{
+    font-size: 40px;
+    color: var(--primary-tool);
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
