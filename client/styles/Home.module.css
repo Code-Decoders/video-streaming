@@ -24,6 +24,19 @@
 
 }
 
+.inputbase{
+    width: 50%;
+    color: var(--secondary-tool);
+    gap: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-self: start;
+    padding-top: 2%;
+    width: 520px;
+    margin-right: 10%;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;

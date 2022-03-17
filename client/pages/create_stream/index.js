@@ -33,7 +33,7 @@ const CreateStream = () => {
                     <StreamTile id = "5" name = "Playback URL" content = "https://cdn.livepeer.com/hls/adc57gd4cv93rhom/index.m3u8"/>
                 </div>
             </div>
-            <div className = {styles.inputbase} style = {{ width: "50%", gap: "45px", display: "flex", flexDirection: "column", justifyContent: "start", alignSelf: "start", paddingTop: "2%", width: "520px", marginRight: "10%" }}>
+            <div className = {styles.inputbase} >
                  <input value = {data.title} onChange = {change} name = {"title"} className = {styles.input} placeholder = "Title" />
                  <input value = {data.type} onChange = {change} name = {"type"} className = {styles.input} placeholder = "Type" />
                  <input value = {data.username} onChange = {change} name = {"username"} className = {styles.input} placeholder = "Username" />
