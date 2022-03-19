@@ -2,7 +2,7 @@ import styles from './miniVideoTile.module.css';
 import Image from 'next/image';
 import { FiPlus } from 'react-icons/fi';
 
-const MiniVideoTile = ({ image, game, type = "fps" }) => {
+const MiniVideoTile = ({ image, game, type = "fps",followClicked }) => {
   return (
     <div className={styles.miniVideoTilebase}>
       <div style={{ cursor: "pointer" }}>
@@ -14,7 +14,7 @@ const MiniVideoTile = ({ image, game, type = "fps" }) => {
       <div style={{ fontSize: '12px', color: "var(--secondary-tool)", fontWeight: "bold" }}>
         {type.toUpperCase()}
       </div>
-      <div className={styles.follow}>
+      <div className={styles.follow} onClick={followClicked}>
         Follow<FiPlus style={{ height: "20px", width: "20px" }} />
       </div>
     </div>

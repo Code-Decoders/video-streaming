@@ -13,14 +13,13 @@ export default function Home() {
 
   const router = useRouter();
 
-  const [state] = useContext(AppState);
-
   const [authInstance, setAuthInstance] = useState(null);
+
 
   useEffect( () => {
     const getAuth = async () => {
       const AuthProvider = (await import("@arcana/auth")).AuthProvider;
-      const Auth = new AuthProvider({
+      const authProvider = new AuthProvider.init({
         appID: '568',
         network: "testnet",
         oauthCreds: [
@@ -31,12 +30,15 @@ export default function Home() {
         ],
         redirectUri: `${window.location.origin}/auth/redirect`,
       })
-       Auth.isLoggedIn ? console.log('logged in') : router.push('/login')
-      setAuthInstance(Auth);
+      setAuthInstance(authProvider);
     }
-    
     getAuth()
-  }, [router])
+    }, [router])
+  
+    const checkAuth = async () => {
+     await authInstance.isLoggedIn() ? console.log('logged in') : router.push('/login')
+    }
+
 
   return (
     <div style={{ height: "100%", color: "black", marginTop: "50px"}}>
@@ -76,7 +78,11 @@ export default function Home() {
                 title={video.title}
                 player={video.player}
                 game={video.game}
-
+                followClicked={async () => {
+                 console.log(authInstance.isLoggedIn());
+                 await authInstance.logout()
+                 console.log(authInstance.isLoggedIn());
+                }}
               />
             )
           }
