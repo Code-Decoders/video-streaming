@@ -4,6 +4,39 @@
   color: white;
 }
 
+.input{
+  display: flex;
+  height: 52px;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  width: 451px;
+  padding: 14px;
+  border: 1px solid var(--secondary-tool);
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input::placeholder{
+    font-size: 20px;
+    color: var(--primary-tool);
+
+}
+
+.inputbase{
+    width: 50%;
+    color: var(--secondary-tool);
+    gap: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-self: start;
+    padding-top: 2%;
+    width: 520px;
+    margin-right: 10%;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
