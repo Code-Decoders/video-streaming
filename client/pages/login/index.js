@@ -7,7 +7,7 @@ import MetaMask from '../../public/images/metamask-logo-png-transparent 1.png'
 import {useRouter} from 'next/router'
 import Web3 from 'web3'
 import HDWalletProvider from "@truffle/hdwallet-provider";
-import SimpleContract from "../../../build/contracts/SimpleStorage.json"
+import SimpleContract from "../../../build/contracts/MyStream.json"
 
 const Login = () => {
 
@@ -51,9 +51,9 @@ const Login = () => {
                 //
                 const myAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
 
-                let contract = new web3.eth.Contract(SimpleContract.abi, "0x7df9D96B6577Fb043f8B4c5407c15DfBfd3Cb16F")
-                // await contract.methods.set(10).send({from: myAccount.address,});
-                let my = await contract.methods.get().call();
+                let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
+                await contract.methods.set(myAccount.address, [["", "", "", false], "ravi", "urserpic"]).send({from: myAccount.address,});
+                let my = await contract.methods.get(myAccount.address).call();
                 console.log("provider ", web3.eth.accounts);
                 console.log("myAccount.address ", myAccount.address);
                 console.log("my ", my);
