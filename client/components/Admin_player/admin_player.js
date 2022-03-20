@@ -1,22 +1,32 @@
 import styles from './admin_player.module.css';
-import { FiPlay } from 'react-icons/fi'
-import volume from '../../public/icons/volume.svg';
-import maximize from '../../public/icons/maximize.svg';
-import Image from 'next/image';
+import { FiPlay, FiVolume1, FiMaximize } from 'react-icons/fi'
+import { useEffect, useRef } from 'react';
+import videojs from 'video.js'
+import "video.js/dist/video-js.css";
+const AdminPlayer = ({ src }) => {
+    const ref = useRef();
 
-const AdminPlayer = () => {
-    return(
-        <div className = {styles.player}>
-            <video className = {styles.video}/>
-            <div/>
-            <div className = {styles.controllers}>
-                <div style = {{ display: "flex", alignItems: "center", width: "80px", justifyContent: "space-between" }}>
-                    <FiPlay style = {{ color: "black", height: "20px", width: "20px"}} />
-            <Image src = {volume} alt = "volume"/>
-                </div>
-            <Image src = {maximize} alt = "maximize"/>
-            </div>
-        </div>
+    const getVideoJS = async () => {
+        if (ref) {
+            const player = videojs(ref.current, {
+                autoplay: true,
+                controls: true,
+                sources: [{
+                    src: src,
+                }],
+            })
+            player.on("error", () => {
+                player.src(src);
+            });
+        }
+    }
+    useEffect(() => {
+        getVideoJS()
+    }, [ref])
+
+    return (
+        <video className='h-full w-full video-js vjs-theme-city' id={'video-id'} ref={ref} controls playsInline />
+
     )
 }
 

@@ -15,10 +15,3 @@ const MarketPlace = () => {
 
 export default MarketPlace
 
-MarketPlace.getLayout = (page) => {
-    return (
-        <Layout title={"MarketPlace"}>
-            {page}
-        </Layout>
-    )
-}

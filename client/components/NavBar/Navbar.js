@@ -5,8 +5,9 @@ import { AppState } from '../../pages/_app';
 import { useState } from "react";
 import { FiPlusCircle, FiBell, FiUser } from 'react-icons/fi';
 import { useContext } from "react";
+import Link from 'next/link';
 
-const NavBar = ({bellClick}) => {
+const NavBar = ({ bellClick }) => {
 
   const [search, setSearch] = useState("")
   const [state] = useContext(AppState)
@@ -20,10 +21,12 @@ const NavBar = ({bellClick}) => {
     <div className={navbarstyle.base}>
       <div className={navbarstyle.search}>
         <SearchBar onClick={() => Search()} value={search} setSearch={setSearch} /></div>
-      <FiPlusCircle className={navbarstyle.pluscircle} />
-      <FiBell className={navbarstyle.bell} onClick={bellClick}/>
+      <Link href={'/create'}>
+        <FiPlusCircle className={navbarstyle.icon} />
+      </Link>
+      <FiBell className={navbarstyle.icon} onClick={bellClick} />
       <div className={navbarstyle.userclass}>
-        <FiUser className={navbarstyle.user} />
+        <FiUser className={navbarstyle.icon} />
       </div>
     </div>
   )

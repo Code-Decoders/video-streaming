@@ -41,7 +41,7 @@ export default function Home() {
 
 
   return (
-    <div style={{ height: "100%", color: "black", marginTop: "50px"}}>
+    <div style={{ height: "100%", color: "black"}}>
       <div className={styles['live-now-bar-style']}>
         <div style={{ flex: "1", fontSize: "30px", wordSpacing: '2px' }}> Live now</div>
         <div className={styles['see-all']}>

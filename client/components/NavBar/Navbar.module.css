@@ -2,7 +2,7 @@
   display: flex;
   font-size: 100px;
   position: sticky;
-  padding: 40px;
+  padding: 4vh;
   z-index: 1;
   align-items: center;
   width: 100%;
@@ -18,29 +18,19 @@
 }
 
 
-.pluscircle{
-  width: 30px;
-  height: 30px;
-}
-
-.bell{
-  width: 30px;
-  height: 30px;
-}
-
-.user{
-  width: 30px;
-  height: 30px;
+.icon{
+  width: 3vh;
+  height: 3vh;
 }
 
 .userclass{
   display: flex;
-  height: 46px;
+  height: 4.6vh;
   background-color: var(--secondary-tool);
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  width: 46px;
+  aspect-ratio: 1;
 }
 
 .user:hover{

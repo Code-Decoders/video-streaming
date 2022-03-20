@@ -4,14 +4,14 @@
   outline: none;
   border: none;
   flex: 1;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .navbase {
   display: flex;
-  height: 52px;
+  height: 5vh;
   border-radius: 5px;
-  width: 451px;
+  width: 30vw;
   padding: 14px;
   border: 1px solid var(--secondary-tool);
   background-color: transparent;
@@ -21,13 +21,13 @@
 
 .searchInput::placeholder {
   color: var(--secondary-tool);
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 
 
 .searchIcon {
   color: var(--secondary-tool);
-  width: 26px;
-  height: 26px;
+  width: 2.6vh;
+  height: 2.6vh;
 }

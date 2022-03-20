@@ -1,6 +1,6 @@
 .player{
-    height: 431px;
-    width: 90%;
+    aspect-ratio: 16/9;
+    position: relative;
     background-color: var(--secondary-tool);
     display: flex;
     flex-direction: column;
@@ -10,19 +10,21 @@
 
 .video{
     position: absolute;
-    width: 586px;
-    height: 331px;
+    width: 100%;
+    aspect-ratio: 16/9;
     border-radius: 20px;
 }
 
 .controllers{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 95%;
+    gap: 0 23px;
     opacity: 0;
-    padding-left: 5%;
-    padding-bottom: 4%;
+    padding: 5%;
 }
 
 .player:hover > .controllers{

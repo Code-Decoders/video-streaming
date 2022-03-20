@@ -10,7 +10,6 @@
   color: white;
   font-size: 20px;
   border-radius: 5px;
-  width: 451px;
   padding: 14px;
   border: 1px solid var(--secondary-tool);
   background-color: transparent;
@@ -25,16 +24,11 @@
 }
 
 .inputbase{
-    width: 50%;
     color: var(--secondary-tool);
-    gap: 45px;
+    flex:0.8;
+    gap: 35px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-self: start;
-    padding-top: 2%;
-    width: 520px;
-    margin-right: 10%;
 }
 
 .main {
