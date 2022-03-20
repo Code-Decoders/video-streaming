@@ -13,12 +13,14 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  height: 85vh;
   transition: 0.5s width ease-in-out;
 }
 
 .chat-bar-button {
   height: 41px;
   color: white;
+  justify-self: flex-start;
   cursor: pointer;
   width: 41px;
   display: flex;
