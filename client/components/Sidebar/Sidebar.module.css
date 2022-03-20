@@ -1,5 +1,5 @@
 .sidebar-container {
-  padding: 5vh 2vw;
+  padding: 4vh 2vw;
   width: 20%;
   height: 100vh;
   position: fixed;
@@ -20,7 +20,7 @@
   height: 41px;
   cursor: pointer;
   width: 41px;
-  margin-bottom: 39px;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
   justify-content: center;

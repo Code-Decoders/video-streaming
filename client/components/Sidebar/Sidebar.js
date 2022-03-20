@@ -17,7 +17,7 @@ const Sidebar = () => {
     return (
         <div className={styles[`sidebar-container`]} style={state.isSidebarOpen ? {} : { width: '7%' }}>
             <div className={styles['sidebar-row-first']}>
-                <div className={styles['sidebar-circle-button']} style={state.isSidebarOpen ? {} : { marginBottom: '75px' }} onClick={() => {
+                <div className={styles['sidebar-circle-button']} onClick={() => {
                     setState(prevState => ({
                         ...prevState,
                         isSidebarOpen: !prevState.isSidebarOpen
@@ -26,8 +26,7 @@ const Sidebar = () => {
                     {state.isSidebarOpen ? <FiChevronLeft color='white' height={13} width={6} /> : <FiChevronRight color='white' height={13} width={6} />}
                 </div>
             </div>
-            {state.isSidebarOpen ? <div className={styles['sidebar-header']} style={{ marginBottom: '10px' }}>Home</div> : <></>}
-            <SidebarButton title={'Home'} icon={<FiFile i />} actived={router.pathname == '/'} link={'/'} />
+            <SidebarButton title={'Home'} icon={<FiFile/>} actived={router.pathname == '/'} link={'/'} />
             <SidebarButton title={'Browse'} icon={<FiFeather />} actived={router.pathname == '/browse'} link={'/browse'} />
             <SidebarButton title={'Community'} icon={<FiUsers />} actived={router.pathname == '/community'} link={'/api'} />
             <SidebarButton title={'MarketPlace'} icon={<RiShoppingBasket2Line />} actived={router.pathname == '/marketplace'} link={'/marketplace'} />
