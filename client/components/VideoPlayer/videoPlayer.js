@@ -7,13 +7,32 @@ import { data } from "../../public/dummy_data/data";
 import MiniVideoTile from "../MiniVideoTile/miniVideoTile";
 import VideoTile from "../VideoTile/videoTile";
 import SideBar from './chatBar';
+import { useRef } from 'react';
 
-const VideoPlayer = ({ image, name, title, game }) => {
-  return (
+const VideoPlayer = ({ link, image, name, title, game }) => {
+  
+    const ref = useRef()
+
+    const getVideoPlayer = () => {
+        if(ref){
+            const player = videojs(ref.current, {
+                    autoplay: true,
+                    controls: true,
+                sources: [{
+                    src: link,
+                }]
+            })
+            player.on('error', () => {
+                player.src(link);
+            })
+        }
+    }
+
+    return (
     <div style = {{ display: "flex"}}>
     <div style={{ marginRight: "2%"}}>
       <div className={styles["video-player"]}>
-        <Image src={image} alt="no Image" />
+          <video src = {link} width = "100%" style={{ aspectRatio: "16/9"}} alt="no Video" ref={ref} controls playsInline />
       </div>
       <div className={styles["desc"]}>
         <div className={styles["user-profile"]}>

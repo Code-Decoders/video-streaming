@@ -25,7 +25,7 @@ const AdminPlayer = ({ src }) => {
     }, [ref])
 
     return (
-        <video className='h-full w-full video-js vjs-theme-city' id={'video-id'} ref={ref} controls playsInline />
+        <video style={{ height: "300px", width: "600px", borderRadius: "10px"}} className='h-full w-full video-js vjs-theme-city' id={'video-id'} ref={ref} controls playsInline />
 
     )
 }

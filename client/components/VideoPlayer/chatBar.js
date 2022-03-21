@@ -26,7 +26,7 @@ const SideBar = () => {
   return (
     <div
       className={styles["chat-bar-base"]}
-      style={isOpen ? { width: "110%" } : { width: "10%" }}
+      style={isOpen ? { width: "110%", marginRight: '10px'} : { width: "10%" }}
     >
       <div
         style={{

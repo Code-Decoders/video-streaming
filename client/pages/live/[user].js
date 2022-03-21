@@ -10,11 +10,12 @@ const Live = () => {
   const name = router.query.user
   const title = router.query.title
   const game = router.query.game
+  const link = router.query.link
   return(
     <Layout title = {`${name} - Live`}>
     <div style = {{ marginLeft: "40px" }}>
 	 <div>
-    <VideoPlayer image = {video} name = {name} title = {title} game = {game}/>
+    <VideoPlayer link = {link} image = {video} name = {name} title = {title} game = {game}/>
 	  </div >
     </div>
     </Layout>
