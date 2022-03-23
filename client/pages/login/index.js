@@ -29,14 +29,17 @@ const Login = () => {
                 const web3 = new Web3(localKeyProvider)
                 //
                 const myAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
-                let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
+                let streaming = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
+                // let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
 
                 setState(val => {
                   return {
                     ...val,
                     web3: web3,
                     account: myAccount,
-                    contract: contract,
+                    contracts: {
+                        stream: streaming
+                    },
                   }  
                 })
                 
