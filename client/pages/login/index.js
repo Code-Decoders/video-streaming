@@ -30,7 +30,7 @@ const Login = () => {
                 //
                 const myAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
                 let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
-                // await contract.methods.set(myAccount.address, [["", "", "", false], "ravi", "urserpic"]).send({from: myAccount.address,});
+
                 setState(val => {
                   return {
                     ...val,
@@ -40,10 +40,7 @@ const Login = () => {
                   }  
                 })
                 
-                // let my = await contract.methods.get(myAccount.address).call();
-                // console.log("provider ", web3.eth.accounts);
-                // console.log("myAccount.address ", myAccount.address);
-                // console.log("my ", my);
+                
                 // router.push('/');
             });
         } catch (err) {
