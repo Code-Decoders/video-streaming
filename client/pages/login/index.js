@@ -2,46 +2,25 @@ import {useEffect, useState} from "react";
 import styles from '../../styles/Login.module.css'
 import Layout from '../../components/layouts/secondary'
 import Image from 'next/image'
-import Illustration from '../../public/images/login_illustration.png'
 import MetaMask from '../../public/images/metamask-logo-png-transparent 1.png'
-import {useRouter} from 'next/router'
+import {Router, useRouter} from 'next/router'
 import Web3 from 'web3'
 import HDWalletProvider from "@truffle/hdwallet-provider";
 import SimpleContract from "../../../build/contracts/MyStream.json"
+import { useContext } from "react/cjs/react.development";
+import { AppState } from "../_app";
 
 const Login = () => {
 
-    const localProvider = `https://rpc-mumbai.maticvigil.com/v1/d82ed08c584cd547c34157c5723417839b6d1253`
+    const localProvider = process.env.NEXT_PUBLIC_RPC_URL
 
-    const [authInstance, setAuthInstance] = useState(null);
-    const router = useRouter();
+    const [state, setState] = useContext(AppState);
+    const router = useRouter()
 
-    const getAuth = async () => {
-        const AuthProvider = (await import("@arcana/auth")).AuthProvider;
-        const authProvider = new AuthProvider({
-            appID: '568',
-            network: "testnet",
-            oauthCreds: [
-                {
-                    type: "google",
-                    clientId: "194404779871-s8hde43bkdc0du6afi37na3g6hn9h4kh.apps.googleusercontent.com",
-                },
-            ],
-            redirectUri: `${window.location.origin}/auth/redirect`,
-        })
-        setAuthInstance(authProvider);
-    }
-
-    useEffect(() => {
-        getAuth()
-    }, [])
-
-
-    console.log("authInstance", authInstance)
     const login = async () => {
         try {
-            authInstance.loginWithSocial("google").then(async (res) => {
-                const privateKey = await authInstance.getUserInfo().privateKey;
+            state.authInstance.loginWithSocial("google").then(async (res) => {
+                const privateKey = await state.authInstance.getUserInfo().privateKey;
 
                 // const provider = new Web3.providers.HttpProvider(localProvider)
 
@@ -50,19 +29,31 @@ const Login = () => {
                 const web3 = new Web3(localKeyProvider)
                 //
                 const myAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
-
                 let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
-                await contract.methods.set(myAccount.address, [["", "", "", false], "ravi", "urserpic"]).send({from: myAccount.address,});
-                let my = await contract.methods.get(myAccount.address).call();
-                console.log("provider ", web3.eth.accounts);
-                console.log("myAccount.address ", myAccount.address);
-                console.log("my ", my);
+                // await contract.methods.set(myAccount.address, [["", "", "", false], "ravi", "urserpic"]).send({from: myAccount.address,});
+                setState(val => {
+                  return {
+                    ...val,
+                    web3: web3,
+                    account: myAccount,
+                    contract: contract,
+                  }  
+                })
+                
+                // let my = await contract.methods.get(myAccount.address).call();
+                // console.log("provider ", web3.eth.accounts);
+                // console.log("myAccount.address ", myAccount.address);
+                // console.log("my ", my);
                 // router.push('/');
             });
         } catch (err) {
             window.alert(err);
         }
     }
+
+    useEffect(() => {
+        state.authInstance.isLoggedIn() ? router.push('/') : console.log('');
+    })
 
     return <div className={styles.base}>
         <div className={styles.leftPane}>
