@@ -33,7 +33,7 @@ following technologies.<br><br>
 1. After you are logged in you can either choose to watch live streams or create
    one!
     - So if you chose to watch a stream you'll be presented by a video player
-        which is is created with video.js and some next js. All the data for the
+        which is is created with video.js and next js. All the data for the
         streams are managed by a smart contract.
 
 <p>
