@@ -13,10 +13,10 @@
 ### `Project Overview:`
 
 You all must have visited some or the other video streaming sites and this one
-is no different(well in streaming services) but what makes us different is that we use
+is no different(well in streaming services) but what makes it different is that it uses
 blockchain, web3 and the concept of decentralization for everything and by everything we mean it!<br>
 <br>
-But what makes us different from them and how exactly do we implement web3 and
+But what exactly makes it different from others and how exactly do we implement web3 and
 blockchain like no other does?
 
 
