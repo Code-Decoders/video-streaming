@@ -3,6 +3,7 @@ import VideoTile from '../components/VideoTile/videoTile';
 import { FiChevronRight } from 'react-icons/fi';
 import { AppState } from './_app';
 import { useState,useEffect } from 'react'
+
 import { data } from '../public/dummy_data/data';
 import { useContext } from 'react/cjs/react.development';
 import MiniVideoTile from '../components/MiniVideoTile/miniVideoTile';
@@ -11,33 +12,6 @@ import miniImage from '../public/images/mini_video_tile.png'
 
 export default function Home() {
 
-  const router = useRouter();
-
-  const [authInstance, setAuthInstance] = useState(null);
-
-
-  useEffect( () => {
-    const getAuth = async () => {
-      const AuthProvider = (await import("@arcana/auth")).AuthProvider;
-      const authProvider = new AuthProvider.init({
-        appID: '568',
-        network: "testnet",
-        oauthCreds: [
-          {
-            type: "google",
-            clientId: "194404779871-s8hde43bkdc0du6afi37na3g6hn9h4kh.apps.googleusercontent.com",
-          },
-        ],
-        redirectUri: `${window.location.origin}/auth/redirect`,
-      })
-      setAuthInstance(authProvider);
-    }
-    getAuth()
-    }, [router])
-  
-    const checkAuth = async () => {
-     await authInstance.isLoggedIn() ? console.log('logged in') : router.push('/login')
-    }
 
 
   return (
@@ -79,9 +53,9 @@ export default function Home() {
                 player={video.player}
                 game={video.game}
                 followClicked={async () => {
-                 console.log(authInstance.isLoggedIn());
-                 await authInstance.logout()
-                 console.log(authInstance.isLoggedIn());
+                //  console.log(authInstance.isLoggedIn());
+                //  await authInstance.logout()
+                //  console.log(authInstance.isLoggedIn());
                 }}
               />
             )
