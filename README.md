@@ -22,14 +22,14 @@ blockchain like no other does?
 ### `Tech Stack`
 
 <img src
-= "https://camo.githubusercontent.com/3a092edcd6d57d9bd83ad74ba2cce29b6963102d3aa479817b75bcd60a304aab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6578742532306a732d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d6e657874646f746a73266c6f676f436f6c6f723d7768697465"/> 
+= "https://camo.githubusercontent.com/3a092edcd6d57d9bd83ad74ba2cce29b6963102d3aa479817b75bcd60a304aab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6578742532306a732d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d6e657874646f746a73266c6f676f436f6c6f723d7768697465"/>
+<br>
+<img src = "https://camo.githubusercontent.com/ba1e85d8e39b80f98a9dc0e3a8f81558d77ea2c46f97768447ddc3111068c802/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f536f6c69646974792d6536653665363f7374796c653d666f722d7468652d6261646765266c6f676f3d736f6c6964697479266c6f676f436f6c6f723d626c61636b"/><br>  
+<img width = "50px" src = "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=022"/><br>
 
-<img src = "https://camo.githubusercontent.com/ba1e85d8e39b80f98a9dc0e3a8f81558d77ea2c46f97768447ddc3111068c802/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f536f6c69646974792d6536653665363f7374796c653d666f722d7468652d6261646765266c6f676f3d736f6c6964697479266c6f676f436f6c6f723d626c61636b"/>  
+<img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/ry3l2qjnhbeeji1atsbo" width = "50px"/><br>  
 
-<img width = "50px" src = "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=022"/>  
-
-<img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/ry3l2qjnhbeeji1atsbo" width = "50px"/>  
-
+<img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/noxq2cqqhxwkcv8bpp03" width = "100px"/>
 
 ### `How Gamoly works?`
 
