@@ -1,3 +1,4 @@
+<img src = "https://cdn.discordapp.com/attachments/947498005462929438/957188759122747392/gamoly_preview_rev_1_1.png"/><br>
 #  Gamoly 
 <br>
 
