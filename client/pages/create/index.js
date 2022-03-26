@@ -25,7 +25,8 @@ const Create = () => {
     async function getData() {
         var response = await create(appState.account.address);
         console.log(response)
-        var myStream = await appState.contracts.storage.get().call();
+        console.log(appState)
+        var myStream = await appState.contracts.storage.get().call({from: appState.account.address});
         setStream(myStream);
         console.log(myStream)
         setData(val => {
@@ -46,7 +47,7 @@ const Create = () => {
     }, [])
 
     async function createStream() {
-        await appState.contracts.storage.setStream([`https://cdn.livepeer.com/hls/${state.playbackId}/index.m3u8`, data.title, data.description, !stream.stream.isActive]).send({ from: appState.account.address, });
+        await appState.contracts.storage.setStream(stream.index, [`https://cdn.livepeer.com/hls/${state.playbackId}/index.m3u8`, data.title, data.description,data.category, !stream.stream.isActive]).send({ from: appState.account.address, });
         setData(val => {
             return {
                 ...val,

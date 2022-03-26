@@ -7,6 +7,7 @@ import { useContext } from 'react/cjs/react.development';
 import MiniVideoTile from '../components/MiniVideoTile/miniVideoTile';
 import { useRouter } from 'next/router';
 import miniImage from '../public/images/mini_video_tile.png'
+import { data } from '../public/dummy_data/data.js';
 
 export default function Home() {
   const [state] = useContext(AppState);
@@ -17,13 +18,14 @@ export default function Home() {
       if (state.contracts) {
         console.log(state.contracts)
         let my = await state.contracts.storage.getLiveUsers().call();
-        setStreams(streams);
+        console.log(my.filter(e => e.stream.isActive))
+        setStreams(e => my.filter(e => e.stream.isActive));
       }
     }
-    // getData();
+    getData();
   }, [state])
 
- 
+
 
 
   return (
@@ -38,14 +40,15 @@ export default function Home() {
       <div className={styles.livenow}>
         {
 
-          streams.map((video, index) => {
+          streams.map((stream, index) => {
             return (
               <VideoTile
                 key={index}
-                image={video.image}
-                title={video.title}
-                user={video.player}
-                game={video.game}
+                stream={stream}
+                image={data[0].image}
+                title={'kj'}
+                player={'kj'}
+                game={'kj'}
               />
             );
           })}

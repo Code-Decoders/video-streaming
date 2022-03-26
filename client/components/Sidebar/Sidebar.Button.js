@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 const SidebarButton = ({ title, icon, actived, link }) => {
     const [state, setState] = useContext(AppState)
-    console.log(link)
     if (state.isSidebarOpen)
         return (
             <Link href={link}>

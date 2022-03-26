@@ -10,7 +10,6 @@ import SidebarTile from './Sidebar.Tile';
 const Sidebar = () => {
 
     const [state, setState] = useContext(AppState);
-    console.log(state)
     const path = '';
     const router = useRouter()
 
