@@ -20,7 +20,7 @@ But what exactly makes it different from others and how exactly do we implement 
 blockchain like no other does?
 
 ### `Tech Stack`
-- <img src = "https://user-images.githubusercontent.com/22388017/160230826-e041ece6-da6c-421e-a0a3-fd8445b740c3.png" width="20" height="20"/> React Js
+- <img src = "https://user-images.githubusercontent.com/22388017/160230880-09c562a5-b6af-4c52-8f4c-8f6315c6378a.png" width="20" height="20"/> React Js
 
 
 ### `How Gamoly works?`
