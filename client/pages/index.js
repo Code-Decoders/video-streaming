@@ -12,23 +12,23 @@ import miniImage from '../public/images/mini_video_tile.png'
 
 export default function Home() {
   const [state] = useContext(AppState);
-  useEffect(() => {
-    const getData = async () => {
-      if (state.contracts) {
-        console.log(state.contracts)
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     if (state.contracts) {
+  //       console.log(state.contracts)
 
-        /// state.contract is the contract instance
-        /// state.account is the account instance
-        /// state.web3 is the web3 instance
-        /// state.account.address is the account address
-        await state.contracts.stream.methods.set(state.account.address, [["", "", "", false], "ravi", "urserpic"]).send({ from: state.account.address, });
-        let my = await state.contracts.stream.methods.get(state.account.address).call();
-        console.log("myAccount.address ", state.account.address);
-        console.log("my ", my);
-      }
-    }
-    getData();
-  }, [state])
+  //       /// state.contract is the contract instance
+  //       /// state.account is the account instance
+  //       /// state.web3 is the web3 instance
+  //       /// state.account.address is the account address
+  //       await state.contracts.stream.methods.set(state.account.address, [["", "", "", false], "ravi", "urserpic"]).send({ from: state.account.address, });
+  //       let my = await state.contracts.stream.methods.get(state.account.address).call();
+  //       console.log("myAccount.address ", state.account.address);
+  //       console.log("my ", my);
+  //     }
+  //   }
+  //   getData();
+  // }, [state])
 
 
 

@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
 
   const getContext = async () => {
     const AuthProvider = (await import("@arcana/auth")).AuthProvider;
-    console.log(process.env.NEXT_PUBLIC_APP_ID)
+    console.log(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID)
     const authProvider = new AuthProvider({
       appID: process.env.NEXT_PUBLIC_APP_ID,
       network: "testnet",
@@ -38,9 +38,11 @@ function MyApp({ Component, pageProps }) {
       }
     })
 
-    if (authProvider.isLoggedIn()) {
-      const privateKey =
-        authProvider.getUserInfo().privateKey;
+    // if (authProvider.isLoggedIn()) {
+      // const privateKey =
+      //   authProvider.getUserInfo().privateKey;
+
+      const privateKey = '2701eaf6b262cb5b661904ec25696db2caae653e6968f7066b9b0efd3684527d';
 
       // const provider = new Web3.providers.HttpProvider(localProvider)
 
@@ -63,9 +65,9 @@ function MyApp({ Component, pageProps }) {
           },
         }
       })
-    }
-    else
-      router.push('/login');
+    // }
+    // else
+    //   router.push('/login');
   }
 
   useEffect(() => {
