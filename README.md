@@ -1,5 +1,4 @@
-<img src = "https://cdn.discordapp.com/attachments/947498005462929438/957188759122747392/gamoly_preview_rev_1_1.png"/><br>
-#  Gamoly 
+<center><img src = "https://cdn.discordapp.com/attachments/947498005462929438/957188759122747392/gamoly_preview_rev_1_1.png"/></center>
 <br>
 
 > A decentralized place for streaming and sharing your videos and buying NFT's of the best moments.
