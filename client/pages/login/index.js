@@ -32,12 +32,12 @@ const Login = () => {
             const web3 = new Web3(localKeyProvider)
             //
             const account = web3.eth.accounts.privateKeyToAccount(privateKey);
-            let streaming = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
+            let gamolyStorage = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
             // let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
-            let myStream = await streaming.methods.get(account.address).call();
+            let myStream = await gamolyStorage.methods.get().call();
             if (myStream) {
                 var response = await create(account.address)
-                await streaming.methods.set(account.address, [[`https://cdn.livepeer.com/hls/${response.data.playbackId}/index.m3u8`, "", "", false], random.first() + ' ' + random.last(), 'https://i.imgur.com/Cmdcmsf.png']).send({ from: account.address, });
+                await gamolyStorage.methods.set([[`https://cdn.livepeer.com/hls/${response.data.playbackId}/index.m3u8`, "", "", false], random.first() + ' ' + random.last(), 'https://i.imgur.com/Cmdcmsf.png']).send({ from: account.address, });
                 console.log("my ", myStream);
             }
             setState(val => {
@@ -46,9 +46,8 @@ const Login = () => {
                     web3: web3,
                     account: account,
                     contracts: {
-                        stream: streaming,
-                        marketplace: marketplace
-                    },
+                        storage: gamolyStorage.methods,
+                    }
                 }
             })
 

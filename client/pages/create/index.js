@@ -9,10 +9,9 @@ import { useContext } from 'react/cjs/react.development';
 import { AppState } from '../_app';
 
 const Create = () => {
-    const router = useRouter()
     const [data, setData] = useState({
         title: "",
-        type: "",
+        category: "",
         description: "",
         isActive: false,
     })
@@ -26,14 +25,14 @@ const Create = () => {
     async function getData() {
         var response = await create(appState.account.address);
         console.log(response)
-        var myStream = await appState.contracts.stream.methods.get(appState.account.address).call();
+        var myStream = await appState.contracts.storage.get().call();
         setStream(myStream);
         console.log(myStream)
         setData(val => {
             return {
                 ...val,
                 title: myStream.stream.title,
-                type: '',
+                category: myStream.stream.category,
                 description: myStream.stream.description,
                 isActive: myStream.stream.isActive,
             }
@@ -47,7 +46,7 @@ const Create = () => {
     }, [])
 
     async function createStream() {
-        await appState.contracts.stream.methods.set(appState.account.address, [[`https://cdn.livepeer.com/hls/${state.playbackId}/index.m3u8`, data.title, data.description, !stream.stream.isActive], stream.name, stream.avatar]).send({ from: appState.account.address, });
+        await appState.contracts.storage.setStream([`https://cdn.livepeer.com/hls/${state.playbackId}/index.m3u8`, data.title, data.description, !stream.stream.isActive]).send({ from: appState.account.address, });
         setData(val => {
             return {
                 ...val,
@@ -79,7 +78,7 @@ const Create = () => {
                 </div>
                 <div className={styles.inputbase} >
                     <input value={data.title} onChange={change} name={"title"} className={styles.input} placeholder="Title" />
-                    <input value={data.type} onChange={change} name={"type"} className={styles.input} placeholder="Type" />
+                    <input value={data.category} onChange={change} name={"category"} className={styles.input} placeholder="Category" />
                     <textarea value={data.description} onChange={change} name={"description"} className={styles.input} style={{ height: '100px' }} placeholder="Description" />
                 </div>
             </div>
