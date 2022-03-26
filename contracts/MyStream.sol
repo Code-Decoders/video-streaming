@@ -1,15 +1,22 @@
 pragma solidity ^0.5.16;
 pragma experimental ABIEncoderV2;
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract MyStream {
+contract Gamoly is ERC721URIStorage{
+
     mapping(address => User) public users;
     mapping(address => User) public followers;
     mapping(address => User) public following;
+    mapping(uint256 => NFT) public 
 
     struct User {
         Stream stream;
         string name;
         string avatar;
+    }
+
+    constructor() ERC721("NFT", "NFT"){
+
     }
 
     struct Stream {
@@ -30,24 +37,39 @@ contract MyStream {
         users[_addr] = _user;
     }
 
-    //    Stream[] public streamList;
-    //
-    //    function create(string memory _title, string memory _description) public {
-    //        streamList.push(Stream(_title, _description));
-    //    }
-    //
-    //    // Solidity automatically created a getter for 'todos' so
-    //    // you don't actually need this function.
-    //    function get(uint _index) public view returns (string memory title, string memory description) {
-    //        Stream storage stream = streamList[_index];
-    //        return (stream.title, stream.description);
-    //    }
-    //
-    //    // update title and description
-    //    function update(uint _index, string memory _title, string memory _description) public {
-    //        Stream storage stream = streamList[_index];
-    //        stream.title = _title;
-    //        stream.description = _description;
-    //    }
+
+    //----Market place contract
+
+    NFT[] public NFTlist;
+
+    mapping(address => NFT) totalNFT;
+
+    uint256 public nftCount;
+
+
+    struct NFT{
+        string name;
+        string description;
+        string url;
+        uint256 price;
+        address owner;
+        uint256 nftAddress;
+    }
+
+
+    function buyNFT(string memory nftAddress) public returns(NFT memory nft){
+    }
+
+    function createNFT(string memory _name, string memory _description, string memory _url, uint256 _price, address _owner) public returns (NFT memory nft) {
+        nftCount += 1;
+        NFTlist.push(NFT(_name, _description, _url, _price, _owner, nftCount));
+        NFT memory newNFT = NFTlist[NFTlist.length - 1];
+        totalNFT[_owner] = newNFT;
+        return newNFT;
+    }
+
+    function getNFT(address _owner) public view returns(NFT memory nft){
+        return totalNFT[_owner];
+    }
 
 }

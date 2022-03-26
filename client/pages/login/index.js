@@ -6,6 +6,7 @@ import MetaMask from '../../public/images/metamask-logo-png-transparent 1.png'
 import {Router, useRouter} from 'next/router'
 import Web3 from 'web3'
 import HDWalletProvider from "@truffle/hdwallet-provider";
+import MarketPlaceContract from '../../../build/contracts/Marketplace.json'
 import SimpleContract from "../../../build/contracts/MyStream.json"
 import { useContext } from "react/cjs/react.development";
 import { AppState } from "../_app";
@@ -30,7 +31,7 @@ const Login = () => {
                 //
                 const myAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
                 let streaming = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
-                // let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
+                let marketplace = new web3.eth.Contract(MarketPlaceContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
 
                 setState(val => {
                   return {
@@ -38,7 +39,8 @@ const Login = () => {
                     web3: web3,
                     account: myAccount,
                     contracts: {
-                        stream: streaming
+                        stream: streaming,
+                        marketplace: marketplace
                     },
                   }  
                 })
