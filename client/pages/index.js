@@ -3,8 +3,6 @@ import VideoTile from '../components/VideoTile/videoTile';
 import { FiChevronRight } from 'react-icons/fi';
 import { AppState } from './_app';
 import { useState, useEffect } from 'react'
-
-import { data } from '../public/dummy_data/data';
 import { useContext } from 'react/cjs/react.development';
 import MiniVideoTile from '../components/MiniVideoTile/miniVideoTile';
 import { useRouter } from 'next/router';
@@ -12,24 +10,20 @@ import miniImage from '../public/images/mini_video_tile.png'
 
 export default function Home() {
   const [state] = useContext(AppState);
+
+  const [streams, setStreams] = useState([]);
   useEffect(() => {
     const getData = async () => {
       if (state.contracts) {
         console.log(state.contracts)
-
-        /// state.contract is the contract instance
-        /// state.account is the account instance
-        /// state.web3 is the web3 instance
-        /// state.account.address is the account address
-        await state.contracts.stream.methods.set(state.account.address, [["", "", "", false], "ravi", "urserpic"]).send({ from: state.account.address, });
-        let my = await state.contracts.stream.methods.get(state.account.address).call();
-        console.log("myAccount.address ", state.account.address);
-        console.log("my ", my);
+        let my = await state.contracts.storage.getLiveUsers().call();
+        setStreams(streams);
       }
     }
-    getData();
+    // getData();
   }, [state])
 
+ 
 
 
   return (
@@ -44,7 +38,7 @@ export default function Home() {
       <div className={styles.livenow}>
         {
 
-          data.map((video, index) => {
+          streams.map((video, index) => {
             return (
               <VideoTile
                 key={index}
