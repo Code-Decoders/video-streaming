@@ -36,6 +36,7 @@ blockchain like no other does?
  <img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/ry3l2qjnhbeeji1atsbo" height = "50px" width = "50px"/> 
  <img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/noxq2cqqhxwkcv8bpp03" width = "100px" height = "100px"/>
 </div>
+
 ### `How Gamoly works?`
 
 Well Gamoly uses blockchain at its core. And this is done by implementing the
