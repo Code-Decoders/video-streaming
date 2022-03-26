@@ -16,6 +16,10 @@
     justify-content: space-between;
 }
 
+.buyIcon{
+  color: var(--tool);
+}
+
 .title{
     display: flex;
     align-items: center;

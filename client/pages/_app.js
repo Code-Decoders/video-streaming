@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Web3 from 'web3';
 import HDWalletProvider from '@truffle/hdwallet-provider';
+import MarketPlaceContract from '../../build/contracts/Marketplace.json'
 import SimpleContract from "../../build/contracts/MyStream.json"
 export const AppState = React.createContext();
 
@@ -52,6 +53,7 @@ function MyApp({ Component, pageProps }) {
       //
       const myAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
       let streaming = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
+      let marketplace = new web3.eth.Contract(MarketPlaceContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
       // let streaming = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
       // await contract.methods.set(myAccount.address, [["", "", "", false], "ravi", "urserpic"]).send({from: myAccount.address,});
       setState(val => {
@@ -61,7 +63,7 @@ function MyApp({ Component, pageProps }) {
           account: myAccount,
           contracts: {
             stream: streaming,
-            // marketplace: ,
+            marketplace: marketplace,
           },
         }
       })

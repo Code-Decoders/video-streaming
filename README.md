@@ -1,4 +1,4 @@
-#  Gamoly 
+<center><img src = "https://cdn.discordapp.com/attachments/947498005462929438/957188759122747392/gamoly_preview_rev_1_1.png"/></center>
 <br>
 
 > A decentralized place for streaming and sharing your videos and buying NFT's of the best moments.
@@ -18,6 +18,9 @@ blockchain, web3 and the concept of decentralization for everything and by every
 <br>
 But what exactly makes it different from others and how exactly do we implement web3 and
 blockchain like no other does?
+
+### `Tech Stack`
+- <img src = "https://user-images.githubusercontent.com/22388017/160230880-09c562a5-b6af-4c52-8f4c-8f6315c6378a.png" width="20" height="20"/>  React Js
 
 
 ### `How Gamoly works?`

@@ -1,8 +1,10 @@
 import styles from './nft_cards.module.css'
 import Image from 'next/image'
-import { FiMoreVertical, FiShare } from 'react-icons/fi'
+import buyIcon from '../../public/icons/buy.svg'
+import { FiShare } from 'react-icons/fi'
+import { RiShoppingCart2Line } from 'react-icons/ri'
 
-const NFTCard = ({img, name, desc}) => {
+const NFTCard = ({img, name, desc, share, buy}) => {
 
     return(
         <div className={styles.base}>
@@ -15,13 +17,13 @@ const NFTCard = ({img, name, desc}) => {
                 {name}
             </div>
                 <div style = {{ backgroundColor: "var(--primary)", cursor: "pointer", fontSize: "24px", height: "40px", width: "35px"}} className = {styles['center-align']}>
-                <FiMoreVertical style = {{ color: "var(--tool)" }}/>
+                <RiShoppingCart2Line onClick={buy}  style={{color: "var(--tool)"}}/>
             </div>
             </div>
             <div className={styles.bio}>
                 <div style = {{ backgroundColor: "var(--primary)", width: "207px", paddingLeft: "10px"}}>{desc}</div>
                 <div style = {{ backgroundColor: "var(--primary)", height: "65px", width: "35px"}} className = {styles['center-align']}>
-                    <FiShare style = {{ height: "20px", width: "20px", color: "var(--tool)", cursor: "pointer"}}/></div>
+                    <FiShare onClick={share} style = {{ height: "20px", width: "20px", color: "var(--tool)", cursor: "pointer"}}/></div>
             </div>
         </div>
     )

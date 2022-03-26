@@ -6,6 +6,7 @@ import MetaMask from '../../public/images/metamask-logo-png-transparent 1.png'
 import { Router, useRouter } from 'next/router'
 import Web3 from 'web3'
 import HDWalletProvider from "@truffle/hdwallet-provider";
+import MarketPlaceContract from '../../../build/contracts/Marketplace.json'
 import SimpleContract from "../../../build/contracts/MyStream.json"
 import { useContext } from "react/cjs/react.development";
 import { AppState } from "../_app";
@@ -45,7 +46,8 @@ const Login = () => {
                     web3: web3,
                     account: account,
                     contracts: {
-                        stream: streaming
+                        stream: streaming,
+                        marketplace: marketplace
                     },
                 }
             })

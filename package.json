@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Code-Decoders/video-streaming#readme",
   "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
     "@truffle/hdwallet-provider": "^2.0.4",
     "truffle": "^5.5.5",
     "truffle-flattener": "^1.6.0"
