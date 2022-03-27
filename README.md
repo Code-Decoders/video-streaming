@@ -1,14 +1,10 @@
-<center><img src = "https://cdn.discordapp.com/attachments/947498005462929438/957188759122747392/gamoly_preview_rev_1_1.png"/></center>
-<br>
+![Gamoly](https://user-images.githubusercontent.com/22388017/160281998-89313bba-6b0f-41cd-8b81-2b45479d445e.png)
 
-> A decentralized place for streaming and sharing your videos and buying NFT's of the best moments.
-
----
+### Gamoly is a decentralized dapp for streaming and sharing your videos and buying NFT's of the best moments.
 
 #### For the live site visit:
 
-<br>
-<br>
+---
 
 ### `Project Overview:`
 
@@ -16,26 +12,18 @@ You all must have visited some or the other video streaming sites and this one
 is no different(well in streaming services) but what makes it different is that it uses
 blockchain, web3 and the concept of decentralization for everything and by everything we mean it!<br>
 <br>
-But what exactly makes it different from others and how exactly do we implement web3 and
-blockchain like no other does?
 
-<style>
-.logos{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-</style>
+---
 
 ### `Tech Stack`
-<div class = "logos">
- <img src
-= "https://camo.githubusercontent.com/3a092edcd6d57d9bd83ad74ba2cce29b6963102d3aa479817b75bcd60a304aab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6578742532306a732d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d6e657874646f746a73266c6f676f436f6c6f723d7768697465"/>
- <img src = "https://camo.githubusercontent.com/ba1e85d8e39b80f98a9dc0e3a8f81558d77ea2c46f97768447ddc3111068c802/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f536f6c69646974792d6536653665363f7374796c653d666f722d7468652d6261646765266c6f676f3d736f6c6964697479266c6f676f436f6c6f723d626c61636b"/>  
- <img width = "50px" height = "50px" src = "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=022"/>
- <img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/ry3l2qjnhbeeji1atsbo" height = "50px" width = "50px"/> 
- <img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/noxq2cqqhxwkcv8bpp03" width = "100px" height = "100px"/>
-</div>
+
+* <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>&nbsp;&nbsp;Next JS
+* <img src="https://user-images.githubusercontent.com/22388017/160281711-2dea0da1-3350-46ba-9ec5-80c262b3f29b.png" width="20" height="20"/>&nbsp;&nbsp;Solidity
+* <img src="https://user-images.githubusercontent.com/22388017/160281277-dcd83bd7-afbf-4e5b-aaee-2d3fca7919bc.svg" width="20" height="20"/>&nbsp;&nbsp;Polygon
+* <img src="https://user-images.githubusercontent.com/22388017/160281440-3153952f-995e-492b-9ec2-abd84eb55fb0.png" width="20" height="20"/>&nbsp;&nbsp;Livepeer
+* <img src="https://user-images.githubusercontent.com/22388017/160281520-1bc29d5f-a3e7-4288-b42d-46b5b87d51d5.png" width="20" height="20"/>&nbsp;&nbsp;Arcana
+
+---
 
 ### `How Gamoly works?`
 
@@ -60,8 +48,7 @@ following technologies.<br><br>
 
 ---
 
-
-#### `Additional features`
+### `Additional features`
   1. You can comment on others stream and share it.
   1. Find other streams on the homepage.
 
