@@ -21,11 +21,13 @@ blockchain like no other does?
 
 ### `Tech Stack`
 
-
-
-
+* <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>   Next JS
+* <img src="https://user-images.githubusercontent.com/22388017/160281208-f0ea5241-8c2a-4d00-b57c-cbe8481b4ddb.png" width="20" height="20"/>   Solidity
+* <img src="https://user-images.githubusercontent.com/22388017/160281277-dcd83bd7-afbf-4e5b-aaee-2d3fca7919bc.svg" width="20" height="20"/>   Polygon
 * <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>   NEXT JS
-* 
+* <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>   NEXT JS
+
+---
 ### `How Gamoly works?`
 
 Well Gamoly uses blockchain at its core. And this is done by implementing the
