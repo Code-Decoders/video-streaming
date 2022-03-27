@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/22388017/160281869-5fdd8359-6a66-402a-82b3-192410be4871.png" width="240" height="160"/>
+<img src="https://user-images.githubusercontent.com/22388017/160281869-5fdd8359-6a66-402a-82b3-192410be4871.png" width="300" height="200"/>
 
 # A decentralized place for streaming and sharing your videos and buying NFT's of the best moments.
 
