@@ -17,11 +17,11 @@ blockchain, web3 and the concept of decentralization for everything and by every
 
 ### `Tech Stack`
 
-* <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>&nbsp;Next JS
-* <img src="https://user-images.githubusercontent.com/22388017/160281711-2dea0da1-3350-46ba-9ec5-80c262b3f29b.png" width="20" height="20"/>&nbsp;Solidity
-* <img src="https://user-images.githubusercontent.com/22388017/160281277-dcd83bd7-afbf-4e5b-aaee-2d3fca7919bc.svg" width="20" height="20"/>&nbsp;Polygon
-* <img src="https://user-images.githubusercontent.com/22388017/160281440-3153952f-995e-492b-9ec2-abd84eb55fb0.png" width="20" height="20"/>&nbsp;Livepeer
-* <img src="https://user-images.githubusercontent.com/22388017/160281520-1bc29d5f-a3e7-4288-b42d-46b5b87d51d5.png" width="20" height="20"/>&nbsp;Arcana
+* <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>&nbsp;&nbsp;Next JS
+* <img src="https://user-images.githubusercontent.com/22388017/160281711-2dea0da1-3350-46ba-9ec5-80c262b3f29b.png" width="20" height="20"/>&nbsp;&nbsp;Solidity
+* <img src="https://user-images.githubusercontent.com/22388017/160281277-dcd83bd7-afbf-4e5b-aaee-2d3fca7919bc.svg" width="20" height="20"/>&nbsp;&nbsp;Polygon
+* <img src="https://user-images.githubusercontent.com/22388017/160281440-3153952f-995e-492b-9ec2-abd84eb55fb0.png" width="20" height="20"/>&nbsp;&nbsp;Livepeer
+* <img src="https://user-images.githubusercontent.com/22388017/160281520-1bc29d5f-a3e7-4288-b42d-46b5b87d51d5.png" width="20" height="20"/>&nbsp;&nbsp;Arcana
 
 ---
 
