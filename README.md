@@ -7,7 +7,7 @@
 ---
 
 ### `User Interface`
-<img src="https://user-images.githubusercontent.com/22388017/160283397-00eb3df3-7d29-4067-8f09-ea28518eebad.png" width="400" height="300"/><img src="https://user-images.githubusercontent.com/22388017/160283494-5e855bcc-6d71-49d7-826b-562aabd8c6fb.png" width="400" height="300"/>
+<img src="https://user-images.githubusercontent.com/22388017/160283397-00eb3df3-7d29-4067-8f09-ea28518eebad.png" width="400" height="300"/> <img src="https://user-images.githubusercontent.com/22388017/160283494-5e855bcc-6d71-49d7-826b-562aabd8c6fb.png" width="400" height="300"/>
 
 ---
 
