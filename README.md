@@ -6,6 +6,12 @@
 
 ---
 
+### `User Interface`
+
+![image](https://user-images.githubusercontent.com/22388017/160283397-00eb3df3-7d29-4067-8f09-ea28518eebad.png)
+
+---
+
 ### `Project Overview:`
 Gamoly is a decentralized dapp for streaming and sharing your videos and buying NFT's of the best moments.
 You all must have visited some or the other video streaming sites and this one
