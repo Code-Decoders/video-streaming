@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/22388017/160281998-89313bba-6b0f-41cd-8b81-2b45479d445e.png" width="240" height="160"/>
 
-# Gamoly: Stream, Share and Buy NFT's Solution.
+# Gamoly: Stream, Share and Buy NFT's.
 
 #### For the live site visit:
 
