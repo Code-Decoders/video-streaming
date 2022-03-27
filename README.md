@@ -28,7 +28,7 @@ blockchain, web3 and the concept of decentralization for everything and by every
 ### `How Gamoly works?`
 
 Well Gamoly uses blockchain at its core. And this is done by implementing the
-following technologies.<br><br>
+following technologies.<br>
 1. First of all  the login page:
    - We use Arcana auth for authentications and logins (which basically creates
        a encryted address for the user) so all you need to do is to click
