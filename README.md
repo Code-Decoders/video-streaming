@@ -17,15 +17,6 @@ blockchain like no other does?
 
 ---
 
-### `Tech Stack`
-
-* <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>    Next JS
-* <img src="https://user-images.githubusercontent.com/22388017/160281711-2dea0da1-3350-46ba-9ec5-80c262b3f29b.png" width="20" height="20"/>    Solidity
-* <img src="https://user-images.githubusercontent.com/22388017/160281277-dcd83bd7-afbf-4e5b-aaee-2d3fca7919bc.svg" width="20" height="20"/>    Polygon
-* <img src="https://user-images.githubusercontent.com/22388017/160281440-3153952f-995e-492b-9ec2-abd84eb55fb0.png" width="20" height="20"/>    Livepeer
-* <img src="https://user-images.githubusercontent.com/22388017/160281520-1bc29d5f-a3e7-4288-b42d-46b5b87d51d5.png" width="20" height="20"/>    Arcana
-
----
 ### `How Gamoly works?`
 
 Well Gamoly uses blockchain at its core. And this is done by implementing the
@@ -49,6 +40,15 @@ following technologies.<br><br>
 
 ---
 
+### `Tech Stack`
+
+* <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>    Next JS
+* <img src="https://user-images.githubusercontent.com/22388017/160281711-2dea0da1-3350-46ba-9ec5-80c262b3f29b.png" width="20" height="20"/>    Solidity
+* <img src="https://user-images.githubusercontent.com/22388017/160281277-dcd83bd7-afbf-4e5b-aaee-2d3fca7919bc.svg" width="20" height="20"/>    Polygon
+* <img src="https://user-images.githubusercontent.com/22388017/160281440-3153952f-995e-492b-9ec2-abd84eb55fb0.png" width="20" height="20"/>    Livepeer
+* <img src="https://user-images.githubusercontent.com/22388017/160281520-1bc29d5f-a3e7-4288-b42d-46b5b87d51d5.png" width="20" height="20"/>    Arcana
+
+---
 
 ### `Additional features`
   1. You can comment on others stream and share it.
