@@ -50,7 +50,7 @@ following technologies.<br><br>
 ---
 
 
-#### `Additional features`
+### `Additional features`
   1. You can comment on others stream and share it.
   1. Find other streams on the homepage.
 
