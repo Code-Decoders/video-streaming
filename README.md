@@ -6,11 +6,6 @@
 
 ---
 
-### `User Interface`
-<img src="https://user-images.githubusercontent.com/22388017/160283397-00eb3df3-7d29-4067-8f09-ea28518eebad.png" width="400" height="300"/> <img src="https://user-images.githubusercontent.com/22388017/160283494-5e855bcc-6d71-49d7-826b-562aabd8c6fb.png" width="400" height="300"/>
-
----
-
 ### `Project Overview:`
 Gamoly is a decentralized dapp for streaming and sharing your videos and buying NFT's of the best moments.
 You all must have visited some or the other video streaming sites and this one
@@ -18,6 +13,8 @@ is no different(well in streaming services) but what makes it different is that 
 blockchain, web3 and the concept of decentralization for everything and by everything we mean it!<br>
 But what exactly makes it different from others and how exactly do we implement web3 and blockchain like no other does?
 <br>
+
+<img src="https://user-images.githubusercontent.com/22388017/160283397-00eb3df3-7d29-4067-8f09-ea28518eebad.png" width="400" height="300"/> <img src="https://user-images.githubusercontent.com/22388017/160283494-5e855bcc-6d71-49d7-826b-562aabd8c6fb.png" width="400" height="300"/>
 
 ---
 
