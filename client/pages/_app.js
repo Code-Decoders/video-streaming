@@ -52,8 +52,8 @@ function MyApp({ Component, pageProps }) {
       const web3 = new Web3(localKeyProvider)
       //
       const myAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
-      let storage = new web3.eth.Contract(GamolyContract.abi, "0x3067cF23576876Bb56034fea42FB7811da9b74C1")
-      let marketplace = new web3.eth.Contract(GamolyNFT.abi, "0xA1f8f435C53564d88FA353Ad19Ad9bC7b0e0F2E3")
+      let storage = new web3.eth.Contract(GamolyContract.abi, "0x843d77f791B4EC9e60C9398470Ca4b2243199F84")
+      let marketplace = new web3.eth.Contract(GamolyNFT.abi, "0xd69051F60219dcDBa58DbFF0de7a956ebB2e0A34")
       // let streaming = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
       // await contract.methods.set(myAccount.address, [["", "", "", false], "ravi", "urserpic"]).send({from: myAccount.address,});
       setState(val => {

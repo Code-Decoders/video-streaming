@@ -3,22 +3,33 @@ import video from "../../public/images/demo_image.png";
 import Image from "next/image";
 import VideoPlayer from '../../components/VideoPlayer/videoPlayer';
 import Layout from '../../components/layouts/secondary';
+import { useContext, useEffect, useState } from "react/cjs/react.development";
+import { AppState } from "../_app";
 
 const Live = () => {
-  const Lay = Layout
   const router = useRouter();
-  const name = router.query.user
-  const title = router.query.title
-  const game = router.query.game
-  const link = router.query.link
-  return(
-    <Layout title = {`${name} - Live`}>
-    <div style = {{ marginLeft: "40px" }}>
-	 <div>
-    <VideoPlayer link = {link} image = {video} name = {name} title = {title} game = {game}/>
-	  </div >
+  const name = router.query.name
+  const [state] = useContext(AppState);
+  const [stream, setStream] = useState(null);
+
+  useEffect(() => {
+    var getData = async () => {
+      var myStream = await state.contracts.storage.get(state.account.address).call();
+      setStream(myStream);
+    }
+    getData()
+  }, [])
+
+  if (!stream) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div style={{ marginLeft: "40px" }}>
+      <div>
+        <VideoPlayer link={stream.stream.url} image={video} name={name} title={stream.stream.title} game={stream.stream.category} />
+      </div >
     </div>
-    </Layout>
   )
 }
 export default Live;

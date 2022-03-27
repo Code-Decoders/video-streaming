@@ -26,7 +26,7 @@ const Create = () => {
         var response = await create(appState.account.address);
         console.log(response)
         console.log(appState)
-        var myStream = await appState.contracts.storage.get().call({from: appState.account.address});
+        var myStream = await appState.contracts.storage.get(appState.account.address).call({from: appState.account.address});
         setStream(myStream);
         console.log(myStream)
         setData(val => {

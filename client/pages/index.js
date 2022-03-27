@@ -18,6 +18,7 @@ export default function Home() {
       if (state.contracts) {
         console.log(state.contracts)
         let my = await state.contracts.storage.getLiveUsers().call();
+        console.log(my)
         console.log(my.filter(e => e.stream.isActive))
         setStreams(e => my.filter(e => e.stream.isActive));
       }

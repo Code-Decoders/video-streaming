@@ -8,83 +8,88 @@ import MiniVideoTile from "../MiniVideoTile/miniVideoTile";
 import VideoTile from "../VideoTile/videoTile";
 import SideBar from './chatBar';
 import { useRef } from 'react';
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
+import { useEffect } from "react/cjs/react.development";
 
 const VideoPlayer = ({ link, image, name, title, game }) => {
-  
-    const ref = useRef()
 
-    const getVideoPlayer = () => {
-        if(ref){
-            const player = videojs(ref.current, {
-                    autoplay: true,
-                    controls: true,
-                sources: [{
-                    src: link,
-                }]
-            })
-            player.on('error', () => {
-                player.src(link);
-            })
-        }
+  const ref = useRef()
+
+  const getVideoPlayer = () => {
+    if (ref) {
+      const player = videojs(ref.current, {
+        autoplay: true,
+        controls: true,
+        sources: [{
+          src: link,
+        }]
+      })
+      player.on('error', () => {
+        player.src(link);
+      })
     }
+  }
 
-    return (
-    <div style = {{ display: "flex"}}>
-    <div style={{ marginRight: "2%"}}>
-      <div className={styles["video-player"]}>
-          <video src = {link} width = "100%" style={{ aspectRatio: "16/9"}} alt="no Video" ref={ref} controls playsInline />
-      </div>
-      <div className={styles["desc"]}>
-        <div className={styles["user-profile"]}>
-          <div className={styles["name"]}>
-            <div
-              style={{
-                height: "50px",
-                width: "50px",
-                backgroundColor: "pink",
-                borderRadius: "50%",
-                marginLeft: "10px",
-              }}
-            ></div>
-            <div>
-              {name}
-              <div style={{ fontWeight: "bold", fontSize: "15px" }}>
-                {title}
+  useEffect(() => {
+    getVideoPlayer()
+  }, [])
+
+  return (
+    <div style={{ display: "flex" }}>
+      <div style={{ marginRight: "2%" }}>
+        <video src={link} style={{ width: '100%', height: '100%' }} alt="no Video" className='h-full w-full video-js vjs-theme-city' id={'video-id'} ref={ref} controls playsInline />
+        <div className={styles["desc"]}>
+          <div className={styles["user-profile"]}>
+            <div className={styles["name"]}>
+              <div
+                style={{
+                  height: "50px",
+                  width: "50px",
+                  backgroundColor: "pink",
+                  borderRadius: "50%",
+                  marginLeft: "10px",
+                }}
+              ></div>
+              <div>
+                {name}
+                <div style={{ fontWeight: "bold", fontSize: "15px" }}>
+                  {title}
+                </div>
+                <div style={{ fontSize: "15px", color: "pink" }}>{game}</div>
               </div>
-              <div style={{ fontSize: "15px", color: "pink" }}>{game}</div>
+            </div>
+            <div className={styles["subscribe"]}>
+              Subscribe 20% off <FiChevronDown />
             </div>
           </div>
-          <div className={styles["subscribe"]}>
-            Subscribe 20% off <FiChevronDown />
+          <div style={{ display: "flex", marginBottom: "20px" }}>
+            <div className={styles.tags}>
+              <Tag>Hello there</Tag>
+              <Tag>Action</Tag>
+              <Tag>RPG</Tag>
+            </div>
+            <div className={styles["icon-style"]}>
+              <FiUpload style={{ height: "30px", width: "30px" }} />
+              <FiMoreVertical style={{ height: "30px", width: "30px" }} />
+            </div>
           </div>
         </div>
-        <div style={{ display: "flex", marginBottom: "20px" }}>
-          <div className={styles.tags}>
-            <Tag>Hello there</Tag>
-            <Tag>Action</Tag>
-            <Tag>RPG</Tag>
-          </div>
-          <div className={styles["icon-style"]}>
-            <FiUpload style={{ height: "30px", width: "30px" }} />
-            <FiMoreVertical style={{ height: "30px", width: "30px" }} />
-          </div>
+        <div className={styles.livenow}>
+          {data.map((video, index) => {
+            return (
+              <VideoTile
+                key={index}
+                image={video.image}
+                title={video.title}
+                user={video.player}
+                game={video.game}
+              />
+            );
+          })}
         </div>
       </div>
-      <div className={styles.livenow}>
-        {data.map((video, index) => {
-          return (
-            <VideoTile
-              key={index}
-              image={video.image}
-              title={video.title}
-              user={video.player}
-              game={video.game}
-            />
-          );
-        })}
-      </div>
-    </div>
-    <SideBar/>
+      <SideBar />
     </div>
   );
 };
