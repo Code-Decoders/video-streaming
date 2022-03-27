@@ -1,6 +1,6 @@
 ![Gamoly](https://user-images.githubusercontent.com/22388017/160281998-89313bba-6b0f-41cd-8b81-2b45479d445e.png)
 
-### Gamoly: Stream, share and buy NFT's solution.
+# Gamoly: Stream, Share and Buy NFT's Solution.
 
 #### For the live site visit:
 
