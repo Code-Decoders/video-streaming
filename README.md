@@ -23,6 +23,7 @@ But what exactly makes it different from others and how exactly do we implement 
 * <img src="https://user-images.githubusercontent.com/22388017/160281277-dcd83bd7-afbf-4e5b-aaee-2d3fca7919bc.svg" width="20" height="20"/>&nbsp;&nbsp;Polygon
 * <img src="https://user-images.githubusercontent.com/22388017/160281440-3153952f-995e-492b-9ec2-abd84eb55fb0.png" width="20" height="20"/>&nbsp;&nbsp;Livepeer
 * <img src="https://user-images.githubusercontent.com/22388017/160281520-1bc29d5f-a3e7-4288-b42d-46b5b87d51d5.png" width="20" height="20"/>&nbsp;&nbsp;Arcana
+* <img src="https://user-images.githubusercontent.com/22388017/157878228-221f62a6-24fe-4c3e-beed-17180142fcb1.png" width="20" height="20"/>   Figma (UI Design)
 
 ---
 
