@@ -1,0 +1,43 @@
+.header{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.filebox{
+    margin-top: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 366px;
+    flex-direction: column;
+    width: 620px;
+    border: 1px solid var(--secondary-tool)
+}
+
+.text-input {
+    color: white;
+    background: transparent;
+    outline: none;
+    border: none;
+    flex: 1;
+    font-size: 1rem;
+  }
+
+  .text-input::placeholder {
+    color: var(--secondary-tool);
+    font-size: 1rem;
+  }
+
+
+  .text-base {
+    display: flex;
+    height: 5vh;
+    border-radius: 5px;
+    width: 20vw;
+    padding: 14px;
+    border: 1px solid var(--secondary-tool);
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-between;
+  }

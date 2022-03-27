@@ -1,14 +1,10 @@
-<center><img src = "https://cdn.discordapp.com/attachments/947498005462929438/957188759122747392/gamoly_preview_rev_1_1.png"/></center>
-<br>
+![Gamoly](https://user-images.githubusercontent.com/22388017/160281998-89313bba-6b0f-41cd-8b81-2b45479d445e.png)
 
-> A decentralized place for streaming and sharing your videos and buying NFT's of the best moments.
-
----
+### Gamoly is a decentralized dapp for streaming and sharing your videos and buying NFT's of the best moments.
 
 #### For the live site visit:
 
-<br>
-<br>
+---
 
 ### `Project Overview:`
 
@@ -16,26 +12,18 @@ You all must have visited some or the other video streaming sites and this one
 is no different(well in streaming services) but what makes it different is that it uses
 blockchain, web3 and the concept of decentralization for everything and by everything we mean it!<br>
 <br>
-But what exactly makes it different from others and how exactly do we implement web3 and
-blockchain like no other does?
 
-<style>
-.logos{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-</style>
+---
 
 ### `Tech Stack`
-<div class = "logos">
- <img src
-= "https://camo.githubusercontent.com/3a092edcd6d57d9bd83ad74ba2cce29b6963102d3aa479817b75bcd60a304aab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6578742532306a732d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d6e657874646f746a73266c6f676f436f6c6f723d7768697465"/>
- <img src = "https://camo.githubusercontent.com/ba1e85d8e39b80f98a9dc0e3a8f81558d77ea2c46f97768447ddc3111068c802/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f536f6c69646974792d6536653665363f7374796c653d666f722d7468652d6261646765266c6f676f3d736f6c6964697479266c6f676f436f6c6f723d626c61636b"/>  
- <img width = "50px" height = "50px" src = "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=022"/>
- <img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/ry3l2qjnhbeeji1atsbo" height = "50px" width = "50px"/> 
- <img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/noxq2cqqhxwkcv8bpp03" width = "100px" height = "100px"/>
-</div>
+
+* <img src="https://user-images.githubusercontent.com/22388017/160281180-667452d7-0fa5-4459-b853-4f7d8c1bbb7f.png" width="20" height="20"/>&nbsp;&nbsp;Next JS
+* <img src="https://user-images.githubusercontent.com/22388017/160281711-2dea0da1-3350-46ba-9ec5-80c262b3f29b.png" width="20" height="20"/>&nbsp;&nbsp;Solidity
+* <img src="https://user-images.githubusercontent.com/22388017/160281277-dcd83bd7-afbf-4e5b-aaee-2d3fca7919bc.svg" width="20" height="20"/>&nbsp;&nbsp;Polygon
+* <img src="https://user-images.githubusercontent.com/22388017/160281440-3153952f-995e-492b-9ec2-abd84eb55fb0.png" width="20" height="20"/>&nbsp;&nbsp;Livepeer
+* <img src="https://user-images.githubusercontent.com/22388017/160281520-1bc29d5f-a3e7-4288-b42d-46b5b87d51d5.png" width="20" height="20"/>&nbsp;&nbsp;Arcana
+
+---
 
 ### `How Gamoly works?`
 
@@ -60,10 +48,63 @@ following technologies.<br><br>
 
 ---
 
-
 #### `Additional features`
   1. You can comment on others stream and share it.
   1. Find other streams on the homepage.
+
+### `The problem it solves`
+  So there are lots of video streaming sites which provides streaming features
+  but Gamoly is built different!
+  
+  - It uses blockchain for data storage and management so this makes it super
+      secure since your data is stored in a smart contract.
+  - For streaming it uses livepeer's decentralized video streaming solution
+      which makes streaming much more safe and secure.
+  - For file storage we use Filecoin's decentralized storage network which is
+      similar to IPFS but stores data in a more encryted way.
+  - For NFT management we use solidity, truffle and filecoin all mixed together
+      to create a secure place for buying and selling it.
+  - We don't store data with ourselves which means even we can't access your
+      data directly and this is true even for login credentials!! We use
+      a method similar to Zero-knowledge-proof which makes your privacy more
+      secure.
+  - And last but not the least for subscriptions and memberships we use money
+      streaming (that is you are charged for every second instead of a full month, a bit complicated :)).
+  
+---
+
+### `Challenges we ran into`
+  While finishing this project we had to use a lot of technologies that we were
+  working on for the first time.
+
+ 1. Integrating Arcana with Next Js:
+      
+      - We created the whole project with Next Js and since it uses pre-rendering we
+    couldn't use any package, directly, that would use the window object and Arcana was one
+    of them. So we had to export it dynamically through 'next/dynamic' but that
+    seemed to be an in-efficient way. So we imported it while loading the login
+    page and used the same instance everywhere by creating a context of it.
+  
+ 2. Livepeer integration:
+      - Integrating livepeer was another challenge since we just not had to
+          create a livepeer connection but use that same connection for
+          streaming every stream by the user. We did that by creating a service
+          for user through which multiple users could request for stremaing at
+          the same time.
+ 3. Storing stremaing details in smart contrat:
+      - We had to store every streaming detail for each user in smart contract.
+          And the main problem was to stop the user from creating another
+          stream while he was already streming. We created a simple switch which
+          would turn on when user is streaming and will prevent him from
+          creating another stream. 
+ 4. Creating smart contract for the whole process to work:
+      - Creating such a complex smart contract which could handle everything was
+          too a challenge. We had to create different structs for users, streams
+          and NFTs. The main problem arose in deploying them since deploying
+          each contract separately wouldn't make sense so we integrated all
+          these contracts into a single one and deployed it.
+
+
 
 
 
