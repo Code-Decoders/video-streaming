@@ -1,6 +1,6 @@
 ![Gamoly](https://user-images.githubusercontent.com/22388017/160281998-89313bba-6b0f-41cd-8b81-2b45479d445e.png)
 
-## Gamoly is a decentralized dapp for streaming and sharing your videos and buying NFT's of the best moments.
+### Gamoly is a decentralized dapp for streaming and sharing your videos and buying NFT's of the best moments.
 
 #### For the live site visit:
 
