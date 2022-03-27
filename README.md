@@ -4,8 +4,7 @@
 
 #### For the live site visit:
 
-<br>
-<br>
+---
 
 ### `Project Overview:`
 
@@ -15,6 +14,8 @@ blockchain, web3 and the concept of decentralization for everything and by every
 <br>
 But what exactly makes it different from others and how exactly do we implement web3 and
 blockchain like no other does?
+
+---
 
 ### `Tech Stack`
 
