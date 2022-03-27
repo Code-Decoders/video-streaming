@@ -7,8 +7,7 @@
 ---
 
 ### `User Interface`
-
-![image](https://user-images.githubusercontent.com/22388017/160283397-00eb3df3-7d29-4067-8f09-ea28518eebad.png)
+<img src="https://user-images.githubusercontent.com/22388017/160283397-00eb3df3-7d29-4067-8f09-ea28518eebad.png" width="400" height="300"/>
 
 ---
 
