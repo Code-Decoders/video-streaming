@@ -1,16 +1,17 @@
 ![Gamoly](https://user-images.githubusercontent.com/22388017/160281998-89313bba-6b0f-41cd-8b81-2b45479d445e.png)
 
-### Gamoly is a decentralized dapp for streaming and sharing your videos and buying NFT's of the best moments.
+### Gamoly: Stream, share and buy NFT's solution.
 
 #### For the live site visit:
 
 ---
 
 ### `Project Overview:`
-
+Gamoly is a decentralized dapp for streaming and sharing your videos and buying NFT's of the best moments.
 You all must have visited some or the other video streaming sites and this one
 is no different(well in streaming services) but what makes it different is that it uses
 blockchain, web3 and the concept of decentralization for everything and by everything we mean it!<br>
+But what exactly makes it different from others and how exactly do we implement web3 and blockchain like no other does?
 <br>
 
 ---
