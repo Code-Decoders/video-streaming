@@ -2,13 +2,16 @@ import styles from '../../styles/Admin.module.css'
 import image from '../../public/images/image.svg'
 import {useDropzone} from 'react-dropzone'
 import Image from 'next/image'
-import { useState, useCallback, useEffect} from 'react'
+import { useState, useContext, useEffect} from 'react'
+import { AppState } from '../_app'
 
 const Admin = () => {
 
     const [data, setData] = useState({
         name: "", description: "", price: ""
     })
+
+    const [appState] = useContext(AppState)
 
     const [files, setFiles] = useState([])
 
@@ -23,6 +26,11 @@ const Admin = () => {
        console.log(file.size.toString())
         console.log(file.name)
     }})
+
+    const createNFT = (e) => {
+        e.preventDefault()
+        appState.contracts.marketplace.createNFT();
+    }
 
     const onChange = (e) => {
         setData(prevData => {
@@ -43,7 +51,7 @@ const Admin = () => {
     const thumbs = files.map(file => (
         <div style = {{ width: "100px", height: "100px"}} key={file.name}>
           <div style={{ width: "100px", height: "100px"}}>
-            <img src={file.preview} style={{ width: "100px", height: "100px"}} />
+            <Image src={file.preview} style={{ width: "100px", height: "100px"}} />
           </div>
         </div>
     ));
@@ -61,12 +69,14 @@ const Admin = () => {
             <div style = {{ fontSize: "24px", paddingTop: "20px" }}>
             Image, videos and much more....
             </div>
+            <form onSubmit={createNFT}>
             <div style = {{ color: "var(--secondary-tool)" }}>
                 File types supported: JPG, PNG, GIF, SVG, MP4, WEBM Max size: 40M.
             </div>
             <div style={{    width: "620px",}} {...getRootProps()}>
             <input {...getInputProps()}/>
             {  
+                files[0] == null ?
                 !isDragActive ? 
                 <div className = {styles.filebox}>
                 <Image src = {image} />
@@ -85,10 +95,12 @@ const Admin = () => {
             <div style = {{ fontWeight: "bold", color: "var(--secondary-tool)", fontSize: "15px" }}>
                 or browse media on your device
             </div>
+        </div> : <div className={styles.filebox}>
+                <Image src = {files[0].preview} height ="1000px" width="1000px"/>
         </div>
         }
             </div>
-            <form onSubmit={submit} style = {{ flexDirection: "row", display: "flex", alignItems: "start", gap: "90px", paddingBottom: "30px" }}>
+            <div style = {{ flexDirection: "row", display: "flex", alignItems: "start", gap: "90px", paddingBottom: "30px" }}>
             <div style = {{ marginTop: "80px" }}>
                 <div style = {{ fontSize:"24px", fontWeight: "bold" }}>
                 Name*
@@ -112,6 +124,7 @@ const Admin = () => {
                 <div style = {{ cursor: "pointer", marginTop: "112px", width: "150px", height: "50px", backgroundColor: "var(--tool)", borderRadius: "10px", justifyContent: "center", display: "flex", alignItems: "center" }}>
                     <button type='submit' style = {{ border: "none", cursor: "pointer", backgroundColor: "var(--tool)", color: "white", fontSize: "24px",}}>Create!</button>
                 </div>
+            </div>
             </form>
             </div>
     )
