@@ -23,6 +23,8 @@ export default function Home() {
         setStreams(e => my.filter(e => e.stream.isActive));
       }
     }
+
+    console.log(Array(3).fill('3'))
     getData();
   }, [state])
 
@@ -40,18 +42,25 @@ export default function Home() {
 
       <div className={styles.livenow}>
         {
+          Array(3).fill('0').map((e, index) => {
+            var stream = streams[index]
+            if (index < streams.length) {
 
-          streams.map((stream, index) => {
-            return (
-              <VideoTile
-                key={index}
-                stream={stream}
-                image={data[0].image}
-                title={'kj'}
-                player={'kj'}
-                game={'kj'}
-              />
-            );
+              return (
+                <VideoTile
+                  key={index}
+                  stream={stream}
+                  image={data[0].image}
+                  title={'kj'}
+                  player={'kj'}
+                  game={'kj'}
+                />
+              );
+            }
+            else {
+              console.log(index);
+             return <div style={{ flex: 1 }} />
+            }
           })}
       </div>
       <div style={{ display: "flex ", wordSpacing: "2px", padding: "0px 30px 20px 30px", marginTop: "40px", color: "white", fontWeight: "bold" }}>
