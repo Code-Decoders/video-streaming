@@ -28,8 +28,9 @@ const Admin = () => {
     }})
 
     const createNFT = (e) => {
+        const marketplace = appState.contracts.marketplace;
         e.preventDefault()
-        appState.contracts.marketplace.createNFT();
+        appState.contracts.marketplace.createNFT(marketplace.address, );
     }
 
     const onChange = (e) => {
