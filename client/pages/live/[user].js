@@ -7,17 +7,19 @@ import { AppState } from "../_app";
 
 const Live = () => {
   const router = useRouter();
+
   const name = router.query.name
   const [state] = useContext(AppState);
   const [stream, setStream] = useState(null);
-
   useEffect(() => {
-    var getData = async () => {
-      var myStream = await state.contracts.storage.get(state.account.address).call();
-      setStream(myStream);
+    if (state.contracts) {
+      var getData = async () => {
+        var myStream = await state.contracts.storage.get(router.query.user).call();
+        setStream(myStream);
+      }
+      getData()
     }
-    getData()
-  }, [])
+  }, [state])
 
   if (!stream) {
     return <div>Loading...</div>
