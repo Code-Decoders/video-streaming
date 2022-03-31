@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from '../../styles/Login.module.css'
 import Layout from '../../components/layouts/secondary'
-import Image from 'next/image'
-import MetaMask from '../../public/images/metamask-logo-png-transparent 1.png'
 import { Router, useRouter } from 'next/router'
 import Web3 from 'web3'
 import HDWalletProvider from "@truffle/hdwallet-provider";
@@ -37,9 +35,9 @@ const Login = () => {
                 // let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
                 let myStream = await storage.methods.get(account.address).call();
                 console.log(myStream)
-                if (myStream) {
+                if (myStream.name == '') {
                     var response = await create(account.address)
-                    await storage.methods.set([[`https://cdn.livepeer.com/hls/${response.data.playbackId}/index.m3u8`, "", "", '', false], random.first() + ' ' + random.last(), 'https://i.imgur.com/Cmdcmsf.png',account.address, 0]).send({ from: account.address, });
+                    await storage.methods.set([[`https://cdn.livepeer.com/hls/${response.data.playbackId}/index.m3u8`, "", "", '', false], random.first() + ' ' + random.last(), 'https://i.imgur.com/Cmdcmsf.png', account.address, 0]).send({ from: account.address, });
                     console.log("my ", myStream);
                 }
                 setState(val => {
@@ -63,40 +61,24 @@ const Login = () => {
     }
 
     useEffect(() => {
-        state.authInstance.isLoggedIn() ? router.push('/') : console.log('');
+        if (state.authInstance) {
+            state.authInstance.isLoggedIn() ? router.push('/') : console.log('');
+        }
     })
 
-    return <div className={styles.base}>
-        <div className={styles.leftPane}>
-            <h1 className={styles.bannerTextStyle}>
-                Login with your web3 wallet!
-            </h1>
-            <img src={'https://dashboard.arcana.network/assets/sidebar-illustration.ea9e51ec.png'} alt=""
-                className={styles['login_illustration']} />
-        </div>
-        <div className={styles.dividerBar} />
-        <div style={{ display: 'flex', flex: '1', justifyContent: 'center', alignItems: 'center' }}>
-            <div className={styles.rightPane}>
-                <div>
-                    <div style={{ color: "white", fontSize: "70px", fontWeight: 'bolder' }}>
-                        Welcome to Gamoly
-                    </div>
-                    <div style={{ fontSize: "24px", textAlign: 'center' }}>
-                        {"Let's get started"}
-                    </div>
+    return (
+        <div className={styles.pane}>
+                <div style={{ color: "white", fontSize: "2.5em", fontWeight: 'bold' }}>
+                    Welcome
                 </div>
-                <div className={styles['continue']}>
-                    Continue with:
-                </div>
-                <div onClick={login} className={styles['metamask-button']}>
-                    <img src={'https://dashboard.arcana.network/assets/google-sso.5a80c744.svg'} alt="google" />
-                    <div>
-                        Google
-                    </div>
+                <img src={'/images/logo.png'} height={60}/>
+            <div onClick={login} className={styles['metamask-button']}>
+                <img src={'https://dashboard.arcana.network/assets/google-sso.5a80c744.svg'} style={{marginRight: '1em'}} alt="google" />
+                <div style={{fontSize:'1.125em'}}>
+                    Google
                 </div>
             </div>
-        </div>
-    </div>
+        </div>)
 }
 
 

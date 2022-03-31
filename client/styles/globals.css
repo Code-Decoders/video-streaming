@@ -3,6 +3,7 @@ body, textarea {
   padding: 0;
   margin: 0;
   font-family: 'Eina';
+  height: 100%;
   color: var(--disabled);
   background-color: var(--secondary);
 }

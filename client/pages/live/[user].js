@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import video from "../../public/images/demo_image.png";
 import Image from "next/image";
 import VideoPlayer from '../../components/VideoPlayer/videoPlayer';
-import Layout from '../../components/layouts/secondary';
 import { useContext, useEffect, useState } from "react/cjs/react.development";
 import { AppState } from "../_app";
 
