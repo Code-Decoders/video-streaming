@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }) {
           account: myAccount,
           contracts: {
             storage: storage.methods,
-            marketplace: marketplace.methods,
+            marketplace: marketplace,
           },
         }
       })
@@ -71,6 +71,8 @@ function MyApp({ Component, pageProps }) {
     else
       router.push('/login');
   }
+
+  console.log(state)
 
   useEffect(() => {
     getContext()
