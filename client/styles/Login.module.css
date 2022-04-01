@@ -1,74 +1,25 @@
-.base {
+.pane {
   display: flex;
-}
-
-
-.rightPane {
-  padding: 4vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 59px;
-}
-
-.rightPane .continue {
-  align-self: start;
-  font-size: 40px;
-  color: white;
-}
-
-.leftPane {
-  display: flex;
-  flex: 0.3;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4vh;
-  gap: 40px;
-}
-
-.login_illustration {
-  width: 280px;
-  height: 300px;
-}
-
-.bannerTextStyle {
-  font-size: 3.125em;
-  color: white;
-}
-
-.dividerBar {
   height: 100vh;
-  width: 5px;
-  background: black;
+  padding: 25vh 0;
+  flex-direction: column;
+  background-color: #181818;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
 }
 
 .metamask-button {
-  width: 30vw;
-  height: 75px;
-  box-shadow: 0px 5px 5px 0px black;
+  box-shadow: 4px 5px 4px #00000040;
+  width: 270px;
+  max-width: 240px;
+  width: 36vw;
+  background: radial-gradient(134.5% 939.99% at -23.59% -12.9%,#262626 0,rgba(26,26,26,.863) 31.41%,rgba(32,32,32,.49) 100%);
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   font-size: 25px;
-  gap: 0 20px;
-  padding: 20px;
+  padding: 0.8em 1.5em;
   align-items: center;
-}
-
-@media screen and (max-width: 1000px) {
-
-  .leftPane {
-    display: none;
-  }
-
-  .rightPane {
-    max-width: 800px;
-  }
-  
-  .dividerBar {
-    display: none;
-  }
 }

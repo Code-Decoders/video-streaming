@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from '../../styles/Login.module.css'
 import Layout from '../../components/layouts/secondary'
-import Image from 'next/image'
-import MetaMask from '../../public/images/metamask-logo-png-transparent 1.png'
 import { Router, useRouter } from 'next/router'
 import Web3 from 'web3'
 import HDWalletProvider from "@truffle/hdwallet-provider";
@@ -23,36 +21,49 @@ const Login = () => {
     const login = async () => {
         try {
             state.authInstance.loginWithSocial("google").then(async (res) => {
-                const privateKey = await state.authInstance.getUserInfo().privateKey;
-                // const privateKey = '2701eaf6b262cb5b661904ec25696db2caae653e6968f7066b9b0efd3684527d';
-                // const provider = new Web3.providers.HttpProvider(localProvider)
+                try {
+                    const privateKey = await state.authInstance.getUserInfo().privateKey;
+                    // const privateKey = '2701eaf6b262cb5b661904ec25696db2caae653e6968f7066b9b0efd3684527d';
+                    // const provider = new Web3.providers.HttpProvider(localProvider)
 
-                const localKeyProvider = new HDWalletProvider(privateKey, localProvider);
+                    const localKeyProvider = new HDWalletProvider(privateKey, localProvider);
 
-                const web3 = new Web3(localKeyProvider)
-                //
-                const account = web3.eth.accounts.privateKeyToAccount(privateKey);
-                let storage = new web3.eth.Contract(GamolyContract.abi, "0x843d77f791B4EC9e60C9398470Ca4b2243199F84")
-                let marketplace = new web3.eth.Contract(GamolyNFT.abi, "0xd69051F60219dcDBa58DbFF0de7a956ebB2e0A34")
-                // let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
-                let myStream = await storage.methods.get(account.address).call();
-                console.log(myStream)
-                if (myStream) {
-                    var response = await create(account.address)
-                    await storage.methods.set([[`https://cdn.livepeer.com/hls/${response.data.playbackId}/index.m3u8`, "", "", '', false], random.first() + ' ' + random.last(), 'https://i.imgur.com/Cmdcmsf.png',account.address, 0]).send({ from: account.address, });
-                    console.log("my ", myStream);
-                }
-                setState(val => {
-                    return {
-                        ...val,
-                        web3: web3,
-                        account: account,
-                        contracts: {
-                            storage: storage.methods,
-                            marketplace: marketplace.methods
+                    const web3 = new Web3(localKeyProvider)
+                    //
+                    const account = web3.eth.accounts.privateKeyToAccount(privateKey);
+                    let storage = new web3.eth.Contract(GamolyContract.abi, "0xb5fD2f489eac939B812334F646136D948480DF30")
+                    let marketplace = new web3.eth.Contract(GamolyNFT.abi, "0xd69051F60219dcDBa58DbFF0de7a956ebB2e0A34")
+                    // let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
+                    web3.eth.getBalance(account.address).then(async (bal) => {
+                        if (bal < 0) {
+                            window.alert('Account balance is zero. Kindly deposit some MATIC to your account.')
+                            state.authInstance.logout()
                         }
+                    })
+                    console.log(account.address)
+                    let myStream = await storage.methods.get(account.address).call().catch(e => window.alert('Error: ' + e + '\nAccount Address: ' + account.address));
+
+                    console.log(myStream)
+                    if (myStream.name == '') {
+                        var response = await create(account.address)
+                        await storage.methods.set([[`https://cdn.livepeer.com/hls/${response.data.playbackId}/index.m3u8`, "", "", '', false], random.first() + ' ' + random.last(), 'https://i.imgur.com/Cmdcmsf.png', account.address, 0]).send({ from: account.address, });
+                        console.log("my ", myStream);
                     }
-                })
+                    setState(val => {
+                        return {
+                            ...val,
+                            web3: web3,
+                            account: account,
+                            contracts: {
+                                storage: storage.methods,
+                                marketplace: marketplace.methods
+                            }
+                        }
+                    })
+                }
+                catch (e) {
+                    window.alert(e);
+                }
 
 
                 router.push('/');
@@ -63,40 +74,24 @@ const Login = () => {
     }
 
     useEffect(() => {
-        state.authInstance.isLoggedIn() ? router.push('/') : console.log('');
+        if (state.authInstance) {
+            state.authInstance.isLoggedIn() ? router.push('/') : console.log('');
+        }
     })
 
-    return <div className={styles.base}>
-        <div className={styles.leftPane}>
-            <h1 className={styles.bannerTextStyle}>
-                Login with your web3 wallet!
-            </h1>
-            <img src={'https://dashboard.arcana.network/assets/sidebar-illustration.ea9e51ec.png'} alt=""
-                className={styles['login_illustration']} />
-        </div>
-        <div className={styles.dividerBar} />
-        <div style={{ display: 'flex', flex: '1', justifyContent: 'center', alignItems: 'center' }}>
-            <div className={styles.rightPane}>
-                <div>
-                    <div style={{ color: "white", fontSize: "70px", fontWeight: 'bolder' }}>
-                        Welcome to Gamoly
-                    </div>
-                    <div style={{ fontSize: "24px", textAlign: 'center' }}>
-                        {"Let's get started"}
-                    </div>
-                </div>
-                <div className={styles['continue']}>
-                    Continue with:
-                </div>
-                <div onClick={login} className={styles['metamask-button']}>
-                    <img src={'https://dashboard.arcana.network/assets/google-sso.5a80c744.svg'} alt="google" />
-                    <div>
-                        Google
-                    </div>
+    return (
+        <div className={styles.pane}>
+            <div style={{ color: "white", fontSize: "3.5em", fontWeight: 'bold' }}>
+                Welcome
+            </div>
+            <img src={'/images/logo.png'} height={190} />
+            <div onClick={login} className={styles['metamask-button']}>
+                <img src={'https://dashboard.arcana.network/assets/google-sso.5a80c744.svg'} style={{ marginRight: '1em' }} alt="google" />
+                <div style={{ fontSize: '1.125em' }}>
+                    Google
                 </div>
             </div>
-        </div>
-    </div>
+        </div>)
 }
 
 
