@@ -1,15 +1,18 @@
 import NFTCard from '../../components/NFT_cards/nft_cards'
 import Image from '../../public/images/demo_image.png'
+
 import { AppState } from '../_app'
 import { useContext, useEffect, useState } from 'react/cjs/react.development'
 
 
-const MarketPlace = () => {
 
-    const [state, setState] = useContext(AppState);
-    const [contract, setContract] = useState();
-    const [account, setAccount] = useState();
+const MarketPlace = ({data}) => {
+    
+    const [appState] = useContext(AppState)
 
+const getContracts = () => {
+    
+}
 
     return(
         <div style = {{ display: "flex" , flexDirection: 'column', paddingLeft: "35px"}}>
@@ -24,7 +27,7 @@ const MarketPlace = () => {
                 <div style = {{ cursor: "pointer", color: "var(--secondary-tool)" }}> See All </div>
             </div>
             <div style = {{ display: 'flex', marginTop: "30px", gap: "45px", width: "100%", overflow: "scroll", height: '330px'}}>
-            <NFTCard buy={() => {console.log(state.contracts)}} name = "Hello" desc = "A great game of two characters from the next gen" img = {Image} alt ="nothing" />
+            <NFTCard buy={getContracts} name = "Hello" desc = "A great game of two characters from the next gen" img = {Image} alt ="nothing" />
             <NFTCard name = "Hello" desc = "A great game of two characters from the next gen" img = {Image} alt ="nothing" />
             <NFTCard name = "Hello" desc = "A great game of two characters from the next gen" img = {Image} alt ="nothing" />
             <NFTCard name = "Hello" desc = "A great game of two characters from the next gen" img = {Image} alt ="nothing" />
@@ -46,5 +49,4 @@ const MarketPlace = () => {
         </div>
     )
 }
-
 export default MarketPlace
