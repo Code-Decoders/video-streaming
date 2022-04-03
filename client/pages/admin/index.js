@@ -4,6 +4,10 @@ import {useDropzone} from 'react-dropzone'
 import Image from 'next/image'
 import { useState, useContext, useEffect} from 'react'
 import { AppState } from '../_app'
+import { Blob, NFTStorage,  } from 'nft.storage'
+import mime from 'mime'
+
+const NFT_STORAGE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDNEZjE4RmY2NUQzMzRDMzIzZkEyQkFEOTcwQTMxODQ0MkI3ODU2QTkiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY0ODY2MDAxMzUyMiwibmFtZSI6IkdhbW9seSJ9.cpX0gQvXfBUXpg0R9nvTe8hXk4WKCUDMThdPLigX8L0"
 
 const Admin = () => {
 
@@ -15,22 +19,52 @@ const Admin = () => {
 
     const [files, setFiles] = useState([])
 
+    const storeFile = async () => {
+        var file = files[0]
+        const storage = new NFTStorage({token: NFT_STORAGE_KEY})
+        console.log(file)
+        var lien = await storage.store({
+            image: file,
+            name: "Hello",
+            description: "Hellot ehere"
+        })
+        var data =  (await storage.check(lien.ipnft)).cid
+        return data
+    }
+
+
     const { acceptedFiles, getRootProps, getInputProps, isDragActive} = useDropzone({onDrop: acceptedFiles => {
        const file = acceptedFiles[0]
        setFiles( 
-           acceptedFiles.map(file =>
-        Object.assign(file, {
+           acceptedFiles.map(file =>   
+        {
+            return Object.assign(file, {
           preview: URL.createObjectURL(file)
-        })
+        })}
       ))
        console.log(file.size.toString())
         console.log(file.name)
+        setData(prevData => {
+            return{
+                ...prevData,
+                name: file.name
+            }
+        })
     }})
 
-    const createNFT = (e) => {
-        const marketplace = appState.contracts.marketplace;
+    const createNFT = async (e) => {
         e.preventDefault()
-        appState.contracts.marketplace.createNFT(marketplace.address, );
+        const marketplace = appState.contracts.marketplace;
+        const storage = appState.contracts.storage
+        console.log(appState.contracts)
+        // console.log(await storage.users(appState.contracts).call())
+        // const address = appState.contracts.storageAddress
+        // console.log(address)
+        // const cid = await storeFile()
+        // const tokenId = await marketplace.methods.createNFT(address, cid)
+        // var nft = storage.createNFT(data.name, data.description, address, tokenId, data.price)
+        // console.log(nft)
+
     }
 
     const onChange = (e) => {
