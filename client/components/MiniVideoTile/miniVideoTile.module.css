@@ -1,0 +1,22 @@
+.miniVideoTilebase{
+  padding-bottom: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.miniVideoImage {
+  border-radius: 10px;
+}
+
+.follow{
+ font-size: 12px;
+ background-color: #E5E5E5;
+ display: flex;
+ align-items: center;
+ width: 100px;
+ border-radius: 5px;
+ padding: 6px;
+ justify-content: space-around;
+}

@@ -1,0 +1,39 @@
+.base{
+  display: flex;
+  font-size: 100px;
+  position: sticky;
+  padding: 4vh;
+  z-index: 1;
+  align-items: center;
+  width: 100%;
+  color: white;
+  gap: 0 33px;
+  background-color: var(--secondary);
+}
+
+.search{
+  flex: 1;
+  gap: 20px;
+  display: flex;
+}
+
+
+.icon{
+  width: 3vh;
+  height: 3vh;
+}
+
+.userclass{
+  display: flex;
+  height: 4.6vh;
+  background-color: var(--secondary-tool);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+
+.user:hover{
+  border-radius: 50%;
+  background-color: var(--primary);
+}

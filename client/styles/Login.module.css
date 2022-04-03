@@ -1,0 +1,25 @@
+.pane {
+  display: flex;
+  height: 100vh;
+  padding: 25vh 0;
+  flex-direction: column;
+  background-color: #181818;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.metamask-button {
+  box-shadow: 4px 5px 4px #00000040;
+  width: 270px;
+  max-width: 240px;
+  width: 36vw;
+  background: radial-gradient(134.5% 939.99% at -23.59% -12.9%,#262626 0,rgba(26,26,26,.863) 31.41%,rgba(32,32,32,.49) 100%);
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  padding: 0.8em 1.5em;
+  align-items: center;
+}

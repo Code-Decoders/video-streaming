@@ -1,0 +1,84 @@
+.video-player {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.desc {
+  margin-top: 30px;
+  height: 140px;
+  width: 100%;
+}
+
+.chat-bar-base{
+  background-color: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  position: fixed;
+  right: 0;
+  flex-direction: column;
+  height: 85vh;
+  transition: 0.5s width ease-in-out;
+}
+
+.chat-bar-button {
+  height: 41px;
+  color: white;
+  justify-self: flex-start;
+  cursor: pointer;
+  width: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--tool);
+}
+
+
+.name {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 1%;
+  display: flex;
+  font-size: 20px;
+}
+
+.user-profile {
+  display: flex;
+}
+
+.icon-style {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.livenow {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  gap: 30px;
+}
+
+.subscribe {
+  background-color: var(--secondary-tool);
+  width: 210px;
+  text-align: center;
+  display: flex;
+  font-size: 15px;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  height: 50px;
+}
+
+.tags {
+  flex: 1;
+  display: flex;
+  gap: 2%;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
