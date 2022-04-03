@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { useState, useContext, useEffect} from 'react'
 import { AppState } from '../_app'
 import { Blob, NFTStorage,  } from 'nft.storage'
-import mime from 'mime'
 
 const NFT_STORAGE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDNEZjE4RmY2NUQzMzRDMzIzZkEyQkFEOTcwQTMxODQ0MkI3ODU2QTkiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY0ODY2MDAxMzUyMiwibmFtZSI6IkdhbW9seSJ9.cpX0gQvXfBUXpg0R9nvTe8hXk4WKCUDMThdPLigX8L0"
 
@@ -16,7 +15,8 @@ const Admin = () => {
     })
 
     const [appState] = useContext(AppState)
-
+    const [create, setCreate] = useState("Create!")
+    const [disabled, setDisabled] = useState(false)
     const [files, setFiles] = useState([])
 
     const storeFile = async () => {
@@ -25,11 +25,12 @@ const Admin = () => {
         console.log(file)
         var lien = await storage.store({
             image: file,
-            name: "Hello",
-            description: "Hellot ehere"
+            name: file.name,
+            description: data.description,
         })
-        var data =  (await storage.check(lien.ipnft)).cid
-        return data
+        var fileData =  (await storage.check(lien.ipnft)).cid
+        console.log(fileData)
+        return fileData
     }
 
 
@@ -54,17 +55,26 @@ const Admin = () => {
 
     const createNFT = async (e) => {
         e.preventDefault()
+        setDisabled(true)
+        setCreate('Creating..')
+        try{
         const marketplace = appState.contracts.marketplace;
         const storage = appState.contracts.storage
         console.log(appState.contracts)
-        // console.log(await storage.users(appState.contracts).call())
-        // const address = appState.contracts.storageAddress
-        // console.log(address)
-        // const cid = await storeFile()
-        // const tokenId = await marketplace.methods.createNFT(address, cid)
-        // var nft = storage.createNFT(data.name, data.description, address, tokenId, data.price)
-        // console.log(nft)
-
+        const address = appState.contracts.storageAddress
+        const marketplaceAddress = appState.contracts.marketplaceAddress
+        console.log(address)
+          const cid = await storeFile()
+          await marketplace.methods.createNFT(address, cid).call({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
+          const tokenId = await marketplace.methods.getLatestTokenId().call({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
+          console.log(tokenId)
+            var nft = await storage.createNFT(data.name, data.description, marketplaceAddress, tokenId, data.price).call({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
+            console.log(nft)
+            setCreate("Created!")
+        }catch(err){
+                console.log(err)
+                setCreate("Error")
+            }
     }
 
     const onChange = (e) => {
@@ -108,13 +118,13 @@ const Admin = () => {
             <div style = {{ color: "var(--secondary-tool)" }}>
                 File types supported: JPG, PNG, GIF, SVG, MP4, WEBM Max size: 40M.
             </div>
-            <div style={{    width: "620px",}} {...getRootProps()}>
-            <input {...getInputProps()}/>
+            <div style={{ cursor: !files[0] ? "pointer" : "auto", width: "620px",}} {...getRootProps()}>
+            <input style={{cursor: "pointer"}} {...getInputProps()}/>
             {  
                 files[0] == null ?
                 !isDragActive ? 
                 <div className = {styles.filebox}>
-                <Image src = {image} />
+                <Image src = { image } />
                 <div style = {{ fontWeight: "bold", color: "var(--secondary-tool)", paddingTop: "20px" }}>
                     Drag & drop files here<br/>
                 </div>
@@ -157,7 +167,7 @@ const Admin = () => {
                 </div>
             </div>
                 <div style = {{ cursor: "pointer", marginTop: "112px", width: "150px", height: "50px", backgroundColor: "var(--tool)", borderRadius: "10px", justifyContent: "center", display: "flex", alignItems: "center" }}>
-                    <button type='submit' style = {{ border: "none", cursor: "pointer", backgroundColor: "var(--tool)", color: "white", fontSize: "24px",}}>Create!</button>
+                    <button type='submit' style = {{ border: "none", cursor: "pointer", backgroundColor: "var(--tool)", color: "white", fontSize: "24px",}}>{create}</button>
                 </div>
             </div>
             </form>

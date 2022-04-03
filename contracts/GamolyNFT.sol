@@ -26,7 +26,6 @@ contract GamolyNFT is ERC721URIStorage{
         _mint(admin, newTokenId);
         _setTokenURI(newTokenId, tokenURI);
         approve(contractAddress, newTokenId);
-
         return newTokenId;
     }
 

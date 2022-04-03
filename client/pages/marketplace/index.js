@@ -10,6 +10,18 @@ const MarketPlace = ({data}) => {
     
     const [appState] = useContext(AppState)
 
+    useEffect(() => {
+       getData() 
+    })
+
+    const getData = async () => {
+            if(appState.contracts){
+                console.log("Contract from Marketplace", await appState.contracts.storage)
+                let data = await appState.contracts.storage.nftCount().call()
+                console.log(data)
+                } 
+        } 
+    
 const getContracts = () => {
     
 }

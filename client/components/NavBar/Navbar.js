@@ -22,11 +22,11 @@ const NavBar = ({ bellClick }) => {
       <div className={navbarstyle.search}>
         <SearchBar onClick={() => Search()} value={search} setSearch={setSearch} /></div>
       <Link href={'/create'}>
-        <FiPlusCircle className={navbarstyle.icon} />
+        <FiPlusCircle style={{ cursor: "pointer"}} className={navbarstyle.icon} />
       </Link>
-      <FiBell className={navbarstyle.icon} onClick={bellClick} />
+      <FiBell style = {{ cursor: "pointer"}} className={navbarstyle.icon} onClick={bellClick} />
       <div className={navbarstyle.userclass}>
-        <FiUser className={navbarstyle.icon} />
+        <FiUser style = {{ cursor: "pointer"}} className={navbarstyle.icon} />
       </div>
     </div>
   )

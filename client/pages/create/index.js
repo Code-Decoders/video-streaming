@@ -92,7 +92,7 @@ const Create = () => {
                     <StreamTile id="4" name="SRT Ingest URL" content={`srt://rtmp.livepeer.com:2935?streamid=${state.streamKey}`} />
                     <StreamTile id="5" name="Playback URL" content={`https://cdn.livepeer.com/hls/${state.playbackId}/index.m3u8`} />
                 </div>
-                <div onClick={createStream} style={{ background: 'transparent', border: '1px solid var(--primary)', padding: '8px 10px', color: !data.isActive ? 'red' : 'white', borderRadius: '5px', width: '200px', display: 'flex', justifyContent: 'center' }}>{!data.isActive ? 'Go Live' : 'End Stream'}</div>
+                <div onClick={createStream} style={{ background: 'transparent', border: '1px solid var(--primary)', padding: '8px 10px', color: !data.isActive ? 'red' : 'white', cursor: "pointer", userSelect: "none", borderRadius: '5px', width: '200px', display: 'flex', justifyContent: 'center' }}>{!data.isActive ? 'Go Live' : 'End Stream'}</div>
             </div>
         </div>
     )

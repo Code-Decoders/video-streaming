@@ -20,7 +20,7 @@ contract Gamoly is ReentrancyGuard {
     Counters.Counter private _userCount;
     Counters.Counter private _itemsSold;
 
-    constructor(address payable _admin) public {
+    constructor(address payable _admin) {
         admin = _admin;
     }
 
@@ -95,6 +95,8 @@ contract Gamoly is ReentrancyGuard {
     uint256 public nftCount;
 
     struct NFT {
+        string name;
+        string description;
         uint256 itemId;
         address nftContract;
         uint256 tokenId;
@@ -111,16 +113,18 @@ contract Gamoly is ReentrancyGuard {
         address nftContract,
         uint256 nftId,
         uint256 price
-    ) public payable nonReentrant {
+    ) public payable {
         require(msg.sender == admin, "Sender is not admin");
         require(price > 0, "Price should be atleast 1 !");
         emit Message(msg.sender, nftId);
         _nftId.increment();
         uint256 itemId = _nftId.current();
 
-        IERC721(nftContract).transferFrom(msg.sender, address(this), nftId);
+        IERC721(nftContract).safeTransferFrom(msg.sender, address(this), nftId);
 
         idToNFT[itemId] = NFT(
+            name,
+            description,
             itemId,
             nftContract,
             nftId,
@@ -128,7 +132,6 @@ contract Gamoly is ReentrancyGuard {
             payable(address(0)),
             price
         );
-        return idToNFT[itemId];
     }
 
     //    function sellNFT()
