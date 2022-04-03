@@ -46,8 +46,8 @@ function MyApp({ Component, pageProps }) {
 
       // const provider = new Web3.providers.HttpProvider(localProvider)
       const adminKeyProvider = new HDWalletProvider("51b87ddf603988a4d2baabddf049d0e8c5ed801b83968ab4efc2b04641b2ac0a", localProvider);
-      const web2 = new Web3(adminKeyProvider)
-      const adminAccount = web2.eth.accounts.privateKeyToAccount("51b87ddf603988a4d2baabddf049d0e8c5ed801b83968ab4efc2b04641b2ac0a")
+      const adminWeb3 = new Web3(adminKeyProvider)
+      const adminAccount = adminWeb3.eth.accounts.privateKeyToAccount("51b87ddf603988a4d2baabddf049d0e8c5ed801b83968ab4efc2b04641b2ac0a")
       console.log(adminAccount)
 
       const localKeyProvider = new HDWalletProvider(privateKey, localProvider);

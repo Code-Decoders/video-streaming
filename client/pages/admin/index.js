@@ -4,7 +4,9 @@ import {useDropzone} from 'react-dropzone'
 import Image from 'next/image'
 import { useState, useContext, useEffect} from 'react'
 import { AppState } from '../_app'
-import { Blob, NFTStorage,  } from 'nft.storage'
+import { NFTStorage,  } from 'nft.storage'
+import Layout from '../../components/layouts/secondary'
+
 
 const NFT_STORAGE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDNEZjE4RmY2NUQzMzRDMzIzZkEyQkFEOTcwQTMxODQ0MkI3ODU2QTkiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY0ODY2MDAxMzUyMiwibmFtZSI6IkdhbW9seSJ9.cpX0gQvXfBUXpg0R9nvTe8hXk4WKCUDMThdPLigX8L0"
 
@@ -108,6 +110,7 @@ const Admin = () => {
     }
 
     return(
+        <Layout title={"Admin"}>
         <div style = {{ paddingLeft: "40px" }}>
             <div className = {styles.header}>
                 Create new NFT
@@ -173,7 +176,9 @@ const Admin = () => {
             </div>
             </form>
             </div>
+            </Layout>
     )
 }
+
 
 export default Admin
