@@ -44,7 +44,7 @@ export async function create(name) {
         });
     }
     else
-        return streaming
+        return streaming.data.filter(x => x.name === name)[0];
 }
 
 export async function get(id) {

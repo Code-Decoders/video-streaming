@@ -12,6 +12,8 @@
   background-color: var(--primary);
   border-radius: 10px;
   display: flex;
+  position: fixed;
+  right: 0;
   flex-direction: column;
   height: 85vh;
   transition: 0.5s width ease-in-out;

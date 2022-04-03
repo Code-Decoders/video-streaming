@@ -4,7 +4,7 @@ import styles from '../../styles/Home.module.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { create } from '../../lib/livepeer';
+import { create, get } from '../../lib/livepeer';
 import { useContext } from 'react/cjs/react.development';
 import { AppState } from '../_app';
 
@@ -26,7 +26,7 @@ const Create = () => {
         var response = await create(appState.account.address);
         console.log(response)
         console.log(appState)
-        var myStream = await appState.contracts.storage.get(appState.account.address).call({from: appState.account.address});
+        var myStream = await appState.contracts.storage.get(appState.account.address).call({ from: appState.account.address });
         setStream(myStream);
         console.log(myStream)
         setData(val => {
@@ -38,16 +38,17 @@ const Create = () => {
                 isActive: myStream.stream.isActive,
             }
         })
-        if (response.data[0])
-            setState(response.data[0])
+        if (response)
+            setState(response)
     }
 
     useEffect(() => {
-        getData()
-    }, [])
+        if (appState)
+            getData()
+    }, [appState])
 
     async function createStream() {
-        await appState.contracts.storage.setStream(stream.index, [`https://cdn.livepeer.com/hls/${state.playbackId}/index.m3u8`, data.title, data.description,data.category, !stream.stream.isActive]).send({ from: appState.account.address, });
+        await appState.contracts.storage.setStream(stream.index, [`https://cdn.livepeer.com/hls/${state.playbackId}/index.m3u8`, data.title, data.description, data.category, !stream.stream.isActive]).send({ from: appState.account.address, });
         setData(val => {
             return {
                 ...val,

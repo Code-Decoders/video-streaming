@@ -128,7 +128,6 @@ contract Gamoly is ReentrancyGuard {
             payable(address(0)),
             price
         );
-        return idToNFT[itemId];
     }
 
     //    function sellNFT()
