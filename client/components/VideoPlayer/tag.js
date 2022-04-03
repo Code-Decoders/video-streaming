@@ -1,5 +1,4 @@
-const Tag = ({children}) => {
- 
+const Tag = ({ children }) => {
   const styles = {
     fontSize: "15px",
     height: "35px",
@@ -10,13 +9,9 @@ const Tag = ({children}) => {
     justifyContent: "center",
     backgroundColor: "var(--secondary-tool)",
     borderRadius: "5px",
-  }
+  };
 
-  return(
-    <div style = { styles }>
-        {children}
-    </div>
-  )
-}
+  return <div style={styles}>{children}</div>;
+};
 
 export default Tag;
