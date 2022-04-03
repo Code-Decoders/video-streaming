@@ -5,12 +5,13 @@ const apiKey = process.env.NEXT_PUBLIC_LIVEPEER_API_KEY;
 export async function create(name) {
     console.log('createStream')
     console.log('apiKey', apiKey)
-    var streaming = await axios.get(`https://livepeer.com/api/stream?streamsonly=1&filters=[{"name": ${name}}]`, {
+
+    var streaming = await axios.get(`https://livepeer.com/api/stream?streamsonly=1`, {
         headers: {
             authorization: `Bearer ${apiKey}`,
         }
     })
-    if (streaming.data.length == 0)
+    if (!streaming.data.map(x => x.name).includes(name)) {
         return await axios.post('https://livepeer.com/api/stream', {
             "name": name,
             "profiles": [
@@ -41,8 +42,9 @@ export async function create(name) {
                 authorization: `Bearer ${apiKey}`,
             }
         });
+    }
     else
-        return streaming
+        return streaming.data.filter(x => x.name === name)[0];
 }
 
 export async function get(id) {

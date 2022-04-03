@@ -28,7 +28,7 @@ const Live = () => {
   return (
     <div style={{ marginLeft: "40px" }}>
       <div>
-        <VideoPlayer link={stream.stream.url} image={video} name={name} title={stream.stream.title} game={stream.stream.category} />
+        <VideoPlayer link={stream.stream.url} image={stream.avatar} name={name} title={stream.stream.title} game={stream.stream.category} />
       </div >
     </div>
   )

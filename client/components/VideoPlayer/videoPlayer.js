@@ -36,21 +36,22 @@ const VideoPlayer = ({ link, image, name, title, game }) => {
   }, [])
 
   return (
-    <div style={{ display: "flex" }}>
-      <div style={{ marginRight: "2%" }}>
-        <video src={link} style={{ width: '100%', height: '100%' }} alt="no Video" className='h-full w-full video-js vjs-theme-city' id={'video-id'} ref={ref} controls playsInline />
+    <div style={{ display: "flex", gap: '0 2%',height: '85vh' }}>
+      <div style={{flex: 0.75, overflowY: 'scroll'}}>
+        <video src={link} style={{ width: '100%', }} alt="no Video" className='h-full w-full video-js vjs-theme-city' id={'video-id'} ref={ref} controls playsInline />
         <div className={styles["desc"]}>
           <div className={styles["user-profile"]}>
             <div className={styles["name"]}>
-              <div
+              <img
+                src={image}
                 style={{
                   height: "50px",
                   width: "50px",
-                  backgroundColor: "pink",
                   borderRadius: "50%",
                   marginLeft: "10px",
+                  objectFit: 'cover'
                 }}
-              ></div>
+              />
               <div>
                 {name}
                 <div style={{ fontWeight: "bold", fontSize: "15px" }}>
