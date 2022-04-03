@@ -63,6 +63,8 @@ function MyApp({ Component, pageProps }) {
         Gamoly.abi,
         "0x4b176eDFf60321e8F7b879D3fA86844B5664bA51"
       );
+      let adminStorage = new adminWeb3.eth.Contract(Gamoly.abi, "0x864748BF14Bad2a7Ac8b660b45f62EF42f761e1d")
+      let adminMarketplace = new adminWeb3.eth.Contract(GamolyNFT.abi, "0x3Eaad9D8A54Db1D85E90797B204AAaE089CCCbF6")
       let marketplace = new web3.eth.Contract(
         GamolyNFT.abi,
         "0xd69051F60219dcDBa58DbFF0de7a956ebB2e0A34"
@@ -77,6 +79,8 @@ function MyApp({ Component, pageProps }) {
           admin: adminAccount,
           contracts: {
             storage: storage.methods,
+            adminStorage: adminStorage,
+            adminMarketplace: adminMarketplace,
             storageAddress: storage._address,
             marketplaceAddress: marketplace._address,
             marketplace: marketplace,

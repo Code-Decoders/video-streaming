@@ -63,22 +63,22 @@ const Admin = () => {
     setDisabled(true);
     setCreate("Creating..");
     try {
-      const marketplace = appState.contracts.marketplace;
-      const storage = appState.contracts.storage;
+      const marketplace = appState.contracts.adminMarketplace;
+      const storage = appState.contracts.adminStorage;
       console.log(appState.contracts);
       const admin = appState.admin;
-      const address = appState.contracts.storageAddress;
-      const marketplaceAddress = appState.contracts.marketplaceAddress;
+      const address = appState.contracts.adminStorage._address;
+      const marketplaceAddress = appState.contracts.adminMarketplace._address;
       console.log(admin.address);
       const cid = await storeFile();
+      await marketplace.methods
+      .createNFT(address, cid)
+      .send({ from: admin.address });
       const tokenId = await marketplace.methods
         .getLatestTokenId()
         .call({ from: admin.address });
-      await marketplace.methods
-        .createNFT(address, cid)
-        .send({ from: admin.address });
       console.log(tokenId);
-      var nft = await storage
+      var nft = await storage.methods
         .createNFT(
           data.name,
           data.description,

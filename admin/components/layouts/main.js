@@ -1,17 +1,17 @@
 import Head from 'next/head'
 
-const Main = ({ children }) => {
+const Main = ({children}) => {
     return(
         <div>
             <Head>
-                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <title>Admin</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <title> Admin </title>
             </Head>
             <div>
-                {children}
+                {children}                  
             </div>
         </div>
     )
 }
 
-export default Main
+export default Main                
