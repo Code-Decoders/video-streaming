@@ -6,6 +6,7 @@ import Web3 from 'web3';
 import HDWalletProvider from '@truffle/hdwallet-provider';
 import GamolyNFT from '../../build/contracts/GamolyNFT.json'
 import GamolyContract from "../../build/contracts/Gamoly.json"
+import { create } from '../lib/livepeer';
 export const AppState = React.createContext();
 
 function MyApp({ Component, pageProps }) {
@@ -42,7 +43,6 @@ function MyApp({ Component, pageProps }) {
     if (authProvider.isLoggedIn()) {
       const privateKey =
         authProvider.getUserInfo().privateKey;
-
       // const privateKey = '2701eaf6b262cb5b661904ec25696db2caae653e6968f7066b9b0efd3684527d';
 
       // const provider = new Web3.providers.HttpProvider(localProvider)
