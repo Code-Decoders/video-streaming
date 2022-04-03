@@ -16,15 +16,11 @@ export default function Home() {
   useEffect(() => {
     const getData = async () => {
       if (state.contracts) {
-        console.log(state.contracts)
         let my = await state.contracts.storage.getLiveUsers().call();
-        console.log(my)
-        console.log(my.filter(e => e.stream.isActive))
         setStreams(e => my.filter(e => e.stream.isActive));
       }
     }
 
-    console.log(Array(3).fill('3'))
     getData();
   }, [state])
 

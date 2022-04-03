@@ -61,14 +61,15 @@ const Admin = () => {
         const marketplace = appState.contracts.marketplace;
         const storage = appState.contracts.storage
         console.log(appState.contracts)
+        const admin = appState.admin
         const address = appState.contracts.storageAddress
         const marketplaceAddress = appState.contracts.marketplaceAddress
-        console.log(address)
+        console.log(admin.address)
           const cid = await storeFile()
-          await marketplace.methods.createNFT(address, cid).send({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
-          const tokenId = await marketplace.methods.getLatestTokenId().call({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
+          const tokenId = await marketplace.methods.getLatestTokenId().call({from: admin.address})
+          await marketplace.methods.createNFT(address, cid).send({from: admin.address})
           console.log(tokenId)
-            var nft = await storage.createNFT(data.name, data.description, marketplaceAddress, tokenId, data.price).send({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
+            var nft = await storage.createNFT(data.name, data.description, marketplaceAddress, tokenId, data.price).send({from: admin.address})
             console.log(nft)
             setCreate("Created!")
         }catch(err){
