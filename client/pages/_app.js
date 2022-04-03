@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Web3 from 'web3';
 import HDWalletProvider from '@truffle/hdwallet-provider';
 import GamolyNFT from '../../build/contracts/GamolyNFT.json'
-import GamolyContract from "../../build/contracts/Gamoly.json"
+import Gamoly from "../../build/contracts/Gamoly.json"
 export const AppState = React.createContext();
 
 function MyApp({ Component, pageProps }) {
@@ -51,11 +51,7 @@ function MyApp({ Component, pageProps }) {
       const web3 = new Web3(localKeyProvider)
       //
       const myAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
-<<<<<<< HEAD
-      let storage = new web3.eth.Contract(GamolyContract.abi, "0xb5fD2f489eac939B812334F646136D948480DF30")
-=======
       let storage = new web3.eth.Contract(Gamoly.abi, "0x4b176eDFf60321e8F7b879D3fA86844B5664bA51")
->>>>>>> f931927a2d9eadd4d33cf1902b0fafa435d22766
       let marketplace = new web3.eth.Contract(GamolyNFT.abi, "0xd69051F60219dcDBa58DbFF0de7a956ebB2e0A34")
       // let streaming = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
       // await contract.methods.set(myAccount.address, [["", "", "", false], "ravi", "urserpic"]).send({from: myAccount.address,});

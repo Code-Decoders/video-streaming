@@ -33,6 +33,7 @@ const Login = () => {
                 let storage = new web3.eth.Contract(GamolyContract.abi, "0x4b176eDFf60321e8F7b879D3fA86844B5664bA51")
                 let marketplace = new web3.eth.Contract(GamolyNFT.abi, "0xd69051F60219dcDBa58DbFF0de7a956ebB2e0A34")
                 // let contract = new web3.eth.Contract(SimpleContract.abi, "0xE2a0458fb2872b14923D0253437e1Fdfb30199C3")
+                console.log(account.address)
                 web3.eth.getBalance(account.address).then(async (bal) => {
                     if (bal <= 0) {
                         window.alert('Account balance is zero. Kindly deposit some MATIC to your account.')

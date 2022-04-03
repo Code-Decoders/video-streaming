@@ -65,10 +65,10 @@ const Admin = () => {
         const marketplaceAddress = appState.contracts.marketplaceAddress
         console.log(address)
           const cid = await storeFile()
-          await marketplace.methods.createNFT(address, cid).call({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
+          await marketplace.methods.createNFT(address, cid).send({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
           const tokenId = await marketplace.methods.getLatestTokenId().call({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
           console.log(tokenId)
-            var nft = await storage.createNFT(data.name, data.description, marketplaceAddress, tokenId, data.price).call({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
+            var nft = await storage.createNFT(data.name, data.description, marketplaceAddress, tokenId, data.price).send({from: "0xc607ba29520Cb0E2cAD69F61018A0e700b5CfCCC"})
             console.log(nft)
             setCreate("Created!")
         }catch(err){

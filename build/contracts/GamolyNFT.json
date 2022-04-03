@@ -18844,11 +18844,6 @@
     "name": "solc",
     "version": "0.8.3+commit.8d00100c.Emscripten.clang"
   },
-<<<<<<< HEAD
-  "networks": {},
-  "schemaVersion": "3.4.6",
-  "updatedAt": "2022-04-02T12:17:21.455Z",
-=======
   "networks": {
     "80001": {
       "events": {
@@ -18935,7 +18930,6 @@
   },
   "schemaVersion": "3.4.1",
   "updatedAt": "2022-04-03T05:38:32.675Z",
->>>>>>> f931927a2d9eadd4d33cf1902b0fafa435d22766
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
